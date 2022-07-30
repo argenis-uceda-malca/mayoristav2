@@ -1,0 +1,17 @@
+{
+    "name": "argen/public",
+    "description": "Sistema de ventas Mayorista",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Argen\\Public\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "argenis",
+            "email": "argenis16.aum@gmail.com"
+        }
+    ],
+    "require": {}
+}

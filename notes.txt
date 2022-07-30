@@ -1,0 +1,27 @@
+Cambiar en el carrito de comprar la accion eliminar por 
+VirtualDom -> problema: al darle regresar en el navegador
+me vuelve a agregar el producto q se encuentre en la URL
+-->todo funciona pero es mejorable
+
+
+Actualizar automaticamente la cantidad total al eliminar un producto del carrtio
+
+Corregir la actualizacion del monto en la pagina Cart
+
+
+en la vista de resumen agregar un boton de cancelar compra
+
+proyeger las rutas
+
+
+revisar si el archivo eliminarCarrito.php sirve o no (le falta el atributo de idcategoria)
+
+
+agregar una condicion de que si exxiste la SESSION['admin'] o SESSION['USUARIO'] y doy regresar al 
+login que me autodirija denuevo al panel de administracion. ... solamente me dejara estar en login cuando
+no exista las SESSION['admin'] o SESSION['USUARIO']
+
+agregar fecha en las compras , para mostrarlo en el admin 
+
+
+IMPORTANTE limpiar las entradas de los input (los espacios vacios, las tabulaciones, etc)
