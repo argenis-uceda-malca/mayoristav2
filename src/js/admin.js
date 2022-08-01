@@ -72,7 +72,7 @@ function verificarLogin() {
 
 function editarTabla() {
     $('#registro').DataTable({
-        dom: "Bfrtip",
+        dom: "Bfrti",
         buttons: {
             dom: {
                 button: {
@@ -96,7 +96,7 @@ function editarTabla() {
         'ordering': false,
         'info': true,
         'autoWidth': false,
-        'pageLength': 20,
+        'pageLength': 1000,
 
         'language': {
             info: "Mostrando del _START_ al _END_ de _TOTAL_ resultados",
@@ -159,13 +159,21 @@ function ActualizarProducto() {
     $('#editarProducto').on('submit', function (e) {
         e.preventDefault();
         //alert("hola");
-        var datos = $(this).serializeArray();
-
+        //var datos = $(this).serializeArray();
+        var datos = new FormData(this);
+        
         $.ajax({
             type: 'POST',
             data: datos,
             url: "/editarProducto",
             dataType: 'json',
+            /* When Ajax*/
+            contentType: false,
+            //para enviar imagenes processdata debe ser false
+            processData: false,
+            async: true,
+            // no cachear la página al request
+            cache: false,
             success: function (data) {
                 console.log(data);
                 var resultado = data;
@@ -203,16 +211,24 @@ function AddProducto() {
     $('#addProducto').on('submit', function (e) {
         e.preventDefault();
         //alert("hola");
-        var datos = $(this).serializeArray();
-        //console.log(datos);
+        //var datos = $(this).serializeArray();
+        var datos = new FormData(this);
+        console.log(datos);
         
         $.ajax({
             type: 'POST',
             data: datos,
             url: "/addProducto",
             dataType: 'json',
+            /* When Ajax*/
+            contentType: false,
+            //para enviar imagenes processdata debe ser false
+            processData: false,
+            async: true,
+            // no cachear la página al request
+            cache: false,
             success: function (data) {
-                //console.log(data);
+                console.log(data);
                 var resultado = data;
                 if (resultado.resultado == 'exito') {
                     const Toast = Swal.mixin({
@@ -266,7 +282,7 @@ function ActualizarProductoModal() {
         $('#precio').val(datos[2]);
         $('#idcategoria').text(datos[3]);
         $('#idcategoria').val($cat);
-        $('#stock').val(datos[4]);
+        $('#stock').val(datos[5]);
 
     });
 }
@@ -279,8 +295,8 @@ function ActualizarCategoriaModal() {
         });
         //console.log(datos);
         $('#id').val(datos[0]);
-        $('#idcategoria').text(datos[1]);
-        $('#idcategoria').val(datos[1]);
+        //$('#idcategoria').text(datos[1]);
+        $('#nombre').val(datos[1]);
         $('#descripcion').val(datos[2]);
     });
 }
@@ -433,8 +449,8 @@ function ActualizarMarcaModal() {
         });
         //console.log(datos);
         $('#id').val(datos[0]);
-        $('#idMarca').text(datos[1]);
-        $('#idMarca').val(datos[1]);
+        //$('#idMarca').text(datos[1]);
+        $('#nombre').val(datos[1]);
         $('#descripcion').val(datos[2]);
     });
 }
@@ -511,7 +527,7 @@ function AddMarca() {
                 if (resultado.resultado == 'alerta') {
                     swal.fire(
                         'Advertencia!!!',
-                        'Ya existe un usuario con ese correo',
+                        'No se puede registrar',
                         'warning'
                     )
                 }

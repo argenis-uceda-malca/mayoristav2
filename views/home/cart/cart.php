@@ -43,7 +43,7 @@
           <div class="breadcrumb__text">
             <h2 style="color: #000000;">Carrito de Compras</h2>
             <div class="breadcrumb__option">
-              <a href="./index.html" style="color: #000000;">Inicio -</a>
+              <a href="/" style="color: #000000;">Inicio -</a>
               <span style="color: #000000;">Carrito de compras</span>
             </div>
           </div>
@@ -81,6 +81,7 @@
                     <tr>
                       <td class="shoping__cart__item">
                         <img src="/build/img/cart/cart-1.jpg" alt="">
+                        
                         <h5><?php echo $arregloCarrito[$i]['nombre']; ?></h5>
                       </td>
                       <td class="shoping__cart__price">

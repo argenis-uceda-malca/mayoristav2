@@ -57,6 +57,9 @@ include_once __DIR__ . '/../../templates/administrador/sidebar.php';
                                             <h5 class="text-dark mb-0 font-16 font-weight-medium">Categoria</h5>
                                         </th>
                                         <th class="border-0 font-14 font-weight-medium text-muted text-center">
+                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">Marca</h5>
+                                        </th>
+                                        <th class="border-0 font-14 font-weight-medium text-muted text-center">
                                             <h5 class="text-dark mb-0 font-16 font-weight-medium">Stock</h5>
                                         </th>
 
@@ -71,14 +74,22 @@ include_once __DIR__ . '/../../templates/administrador/sidebar.php';
                                             </td>
                                             <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4"><?php echo $producto->nombre; ?></td>
                                             <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4"><?php echo $producto->precio; ?></td>
-                                            <?php foreach ($categorias as $categoria) {
+                                            <?php
+                                            foreach ($categorias as $categoria) {
                                                 if ($producto->idcategoria == $categoria->id) {
                                                     $nombreCategoria = $categoria->nombre;
                                                 }
-                                            } ?>
+                                            }
+                                            foreach ($marcas as $marca) {
+                                                if ($producto->idmarca == $marca->id) {
+                                                    $nombreMarca = $marca->nombre;
+                                                }
+                                            }
+                                            ?>
 
                                             <?php  ?>
                                             <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4"><?php echo $nombreCategoria; ?></td>
+                                            <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4"><?php echo $nombreMarca; ?></td>
                                             <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4"><?php echo $producto->stock; ?></td>
 
                                             <td class="border-top-0 text-center px-2 py-4">
@@ -111,7 +122,7 @@ include_once __DIR__ . '/../../templates/administrador/sidebar.php';
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     </div>
                     <div class="modal-body">
-                        <form action="POST" id="editarProducto">
+                        <form action="POST" id="editarProducto" enctype="multipart/form-data">
                             <div class="form-body">
                                 <div class="row">
                                     <div class="col-md-9">
@@ -128,7 +139,7 @@ include_once __DIR__ . '/../../templates/administrador/sidebar.php';
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-8">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Categoria</label>
                                             <div class="input-group mb-3">
@@ -140,26 +151,50 @@ include_once __DIR__ . '/../../templates/administrador/sidebar.php';
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Marca</label>
+                                            <div class="input-group mb-3">
+                                                <select class="custom-select" id="inputGroupSelect01" name="idmarca" required>
+                                                    <?php foreach ($marcas as $marca) { ?>
+                                                        <option value="<?php echo $marca->id; ?>" id="marca"><?php echo $marca->nombre; ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Stock </label>
                                             <input type="number" class="form-control" placeholder="Stock" name="stock" id="stock" required>
                                         </div>
                                     </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label>Cargar de Imagen</label>
+                                            <div class="input-group mb-3">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="inputGroupFile01" name="archivo_imagen">
+                                                    <label class="custom-file-label" for="inputGroupFile01">Buscar Archivo</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
                             </div>
                             <div class="form-actions">
                                 <div class="text-right">
                                     <input type="hidden" name="id" id="id">
                                     <button type="submit" class="btn btn-info">Guardar</button>
-                                    <button type="reset" class="btn btn-dark">Cancelar</button>
+                                    <!--<button type="reset" class="btn btn-dark">Cancelar</button>-->
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -174,7 +209,7 @@ include_once __DIR__ . '/../../templates/administrador/sidebar.php';
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     </div>
                     <div class="modal-body">
-                        <form method="POST" id="addProducto" class="needs-validation" >
+                        <form method="POST" id="addProducto" class="needs-validation" enctype="multipart/form-data">
                             <div class="form-body">
                                 <div class="row">
                                     <div class="col-md-9">
@@ -192,7 +227,7 @@ include_once __DIR__ . '/../../templates/administrador/sidebar.php';
 
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-8">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Categoria</label>
                                             <div class="input-group mb-3">
@@ -204,10 +239,35 @@ include_once __DIR__ . '/../../templates/administrador/sidebar.php';
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Marcas</label>
+                                            <div class="input-group mb-3">
+                                                <select class="custom-select" id="inputGroupSelect01" name="idmarca" required>
+                                                    <?php foreach ($marcas as $marca) { ?>
+                                                        <option value="<?php echo $marca->id; ?>" id="marca"><?php echo $marca->nombre; ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Stock </label>
                                             <input type="number" class="form-control" placeholder="Stock" name="stock" id="stock" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label>Cargar de Imagen</label>
+                                            <div class="input-group mb-3">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="inputGroupFile01" name="archivo_imagen">
+                                                    <label class="custom-file-label" for="inputGroupFile01">Buscar Archivo</label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -215,13 +275,13 @@ include_once __DIR__ . '/../../templates/administrador/sidebar.php';
                             <div class="form-actions">
                                 <div class="text-right">
                                     <button type="submit" class="btn btn-info">Guardar</button>
-                                    <button type="reset" class="btn btn-dark">Cancelar</button>
+                                    <!--<button type="reset" class="btn btn-dark">Cancelar</button>-->
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->

@@ -15,6 +15,9 @@ use Controllers\ProductoController;
 use Controllers\ColaboradoresController;
 use Controllers\CategoriaController;
 use Controllers\MarcaController;
+use Controllers\ContactoController;
+use Controllers\NosotrosController;
+use Controllers\PagoFinalizado;
 use MVC\Router;
 $router = new Router();
 
@@ -26,6 +29,9 @@ $router->post('/actualizarCarrito', [CartController::class, 'actualizarCarrito']
 $router->get('/checkout', [CartController::class, 'checkout']);
 $router->post('/crearVenta', [CartController::class, 'guardar']);
 $router->get('/resumen', [CartController::class, 'resumen']);
+$router->get('/contacto', [ContactoController::class, 'contacto']);
+$router->get('/nosotros', [NosotrosController::class, 'nosotros']);
+$router->get('/pagoFin', [PagoFinalizado::class, 'pagoFin']);
 
 //Seccion Administrator
 $router->get('/admin', [AdministradorController::class, 'home']);

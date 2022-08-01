@@ -10,7 +10,7 @@ include_once __DIR__ . '../../../templates/header.php';
                 <div class="breadcrumb__text">
                     <h2 style="color: #000000;">Checkout</h2>
                     <div class="breadcrumb__option">
-                        <a href="./index.html" style="color: #000000;">Inicio -</a>
+                        <a href="/" style="color: #000000;">Inicio -</a>
                         <span style="color: #000000;">Carrito de compras</span>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ include_once __DIR__ . '../../../templates/header.php';
         </div>
         <div class="checkout__form">
             <h4>Detalles de facturación</h4>
-            <form method="POST" action="/crearVenta" class="needs-validation" novalidate>
+            <form method="POST" action="/crearVenta" id="crearVenta" class="needs-validation" novalidate>
                 <div class="row">
                     <div class="col-lg-8 col-md-6">
                         <div class="row">
@@ -40,7 +40,7 @@ include_once __DIR__ . '../../../templates/header.php';
                                     <p>Nombres<span>*</span></p>
                                     <input class="form-control" id="nombre" name="nombres" placeholder="Ingresa tus Nombres" type="text" required>
                                     <div class="valid-feedback">
-                                        Todo bien
+                                        Correcto
                                     </div>
                                     <div class="invalid-feedback">
                                         Es necesario poner el Nombre completo
@@ -52,7 +52,7 @@ include_once __DIR__ . '../../../templates/header.php';
                                     <p>Apellidos<span>*</span></p>
                                     <input type="text" id="apellido" name="apellidos" placeholder="Ingresa tus Apellidos" class="form-control" required>
                                     <div class="valid-feedback">
-                                        Todo bien
+                                        Correcto
                                     </div>
                                     <div class="invalid-feedback">
                                         Es necesario poner el Apellido
@@ -65,9 +65,9 @@ include_once __DIR__ . '../../../templates/header.php';
                             <div class="col-lg-6">
                                 <div class="checkout__input">
                                     <p>Número de DNI<span>*</span></p>
-                                    <input type="number" name="dni" placeholder="Ingrese su DNI" class="form-control" required >
+                                    <input type="number"  name="dni" placeholder="Ingrese su DNI" class="form-control" required maxlength="8">
                                     <div class="valid-feedback ">
-                                        Todo bien
+                                        Correcto
                                     </div>
                                     <div class="invalid-feedback">
                                         Es necesario poner el DNI
@@ -85,19 +85,48 @@ include_once __DIR__ . '../../../templates/header.php';
                                 <div class="checkout__input">
                                     <p>Celular<span>*</span></p>
                                     <input type="number" name="telefono" class="form-control" required>
+                                    <div class="valid-feedback ">
+                                        Correcto
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Ingrese su celular
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="checkout__input">
                                     <p>Email<span>*</span></p>
                                     <input type="email" name="email" class="form-control" required>
+                                    <div class="valid-feedback ">
+                                        Correcto
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Ingrese Email válido
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="checkout__input">
-                            <p>Notas sobre el pedido<span></span></p>
-                            <input type="text" placeholder="Notas sobre su pedido, por ejemplo, notas especiales sobre su entrega.">
+                            <p>Ingrese su dirección<span></span></p>
+                            <input type="text" class="form-control" placeholder="Ejemplo: Mz H Lote 10 Barrio 1 Sec 2 Urb ..." name="direccion" required>
+                            <div class="valid-feedback ">
+                                Correcto
+                            </div>
+                            <div class="invalid-feedback">
+                                Ingrese su dirección
+                            </div>
+                        </div>
+
+                        <div class="checkout__input">
+                            <p>Ingrese referencias sobre la dirección<span></span></p>
+                            <input type="text" class="form-control" placeholder="Referencias sobre su dirección, por ejemplo, calles, avenidas, tiendas, etc" name="referencias" required>
+                            <div class="valid-feedback ">
+                                Correcto
+                            </div>
+                            <div class="invalid-feedback">
+                                Ingrese una referencia
+                            </div>
                         </div>
                     </div>
 
@@ -136,12 +165,20 @@ include_once __DIR__ . '../../../templates/header.php';
                             </div>
                             <div class="checkout__input__checkbox">
                                 <label for="acc-or">
-                                    Desea pagar contra entrega?
+                                    Desea pagar contraentrega?
                                     <input type="checkbox" id="acc-or" name="estado">
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <p>Si desea pagar contra entrega seleccione la casilla</p>
+                            <div class="checkout__input__checkbox">
+                                <label for="payment">
+                                    Desea delivery?
+                                    <input type="checkbox" id="payment" name="delivery">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p>El costo de la entrea por delivery varia deacuerdo al distrito.</p>
+                            <p>Seleccione las opciones que desea</p>
 
                             <!--<input type="hidden" name="fecha" value="2022">-->
                             <button type="submit" class="site-btn">CONFIRMAR</button>
@@ -172,6 +209,8 @@ $script = "
     <script src='/build/js/mixitup.min.js'></script>
     <script src='/build/js/owl.carousel.min.js'></script>
     <script src='/build/js/main.js'></script>
+
+    <script src='//cdn.jsdelivr.net/npm/sweetalert2@11'></script>
 
     <script src='build/js/app.js'></script>
     <script src='build/js/general.js'></script>

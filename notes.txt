@@ -25,3 +25,14 @@ agregar fecha en las compras , para mostrarlo en el admin
 
 
 IMPORTANTE limpiar las entradas de los input (los espacios vacios, las tabulaciones, etc)
+
+
+IMAGENES
+OPCION PARA ENTREGA A DOMICIOLIO ok
+REDIRECCIONAR DESPUES DEL PAGO ok
+TERMINAR LA VISTA DE NOSOTROS ...OK
+CCAMBIAR EL ORDEN DEL SUBMENU(SIDEBAR) agregar cuadraditos
+
+ACTUALIZAR STOCK DESPUES DE LA VENTA
+BOTONES ELIMINAR
+cambiar categoria por marca de producto en reporte de venta

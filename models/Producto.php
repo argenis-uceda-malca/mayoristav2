@@ -5,13 +5,15 @@ namespace Model;
 class Producto extends ActiveRecord {
     // Base de datos
     protected static $tabla = 'productos';
-    protected static $columnasDB = ['id', 'nombre', 'precio', 'idcategoria', 'stock'];
+    protected static $columnasDB = ['id', 'nombre', 'precio', 'idcategoria', 'stock', 'idmarca','imagen'];
 
     public $id;
     public $nombre;
     public $precio;
     public $idcategoria;
     public $stock;
+    public $idmarca;
+    public $imagen;
 
 
     public function __construct($args = [])
@@ -21,7 +23,8 @@ class Producto extends ActiveRecord {
         $this->precio = $args['precio'] ?? '';
         $this->idcategoria = $args['idcategoria'] ?? '';
         $this->stock = $args['stock'] ?? '';
-
+        $this->idmarca = $args['idmarca'] ?? '';
+        $this->imagen = $args['imagen'] ?? '';
     }
 
     public function validar() {
@@ -36,5 +39,11 @@ class Producto extends ActiveRecord {
         }
 
         return self::$alertas;
+    }
+
+    public function setImagen($imagen){
+        if($imagen){
+            $this->imagen = $imagen;
+        }
     }
 }

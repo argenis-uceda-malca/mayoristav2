@@ -30,6 +30,7 @@ class MarcaController
         isAuth();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $marca = new Marcas($_POST);
+            
             $resultado = $marca->guardar();
 
             if ($resultado) {

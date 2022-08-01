@@ -21,7 +21,7 @@ MercadoPago\SDK::setAccessToken('TEST-2658067067371995-091118-9a053d5a9a56767ce6
 $preference = new MercadoPago\Preference();
 
 $preference->back_urls = array(
-    "success" => "https://localhost/",
+    "success" => "http://localhost:8080/pagoFin",
     "failure" => "http://localhost/",
     "pending" => "http://localhost/"
 );
@@ -32,7 +32,7 @@ $item->id = '0001';
 $item->title = 'Mi producto';
 $item->quantity = 1;
 $item->currency_id = "PEN";
-$item->unit_price = 75.56;
+$item->unit_price = $total;
 $preference->items = array($item);
 $preference->save();
 ?>
@@ -122,9 +122,7 @@ $preference->save();
                     <li><b>Ecuentranos en </b>
                         <div class="share">
                             <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
                         </div>
                     </li>
                 </ul>

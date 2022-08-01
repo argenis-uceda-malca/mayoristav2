@@ -97,11 +97,7 @@ include_once __DIR__ . '/../../templates/administrador/sidebar.php';
                                         <div class="form-group">
                                             <label>Categoria</label>
                                             <div class="input-group mb-3">
-                                                <select class="custom-select" id="inputGroupSelect02" name="nombre" required>
-                                                    <?php foreach ($categorias as $categoria) { ?>
-                                                        <option value="<?php echo $categoria->nombre; ?>" id="idcategoria"><?php echo $categoria->nombre; ?></option>
-                                                    <?php } ?>
-                                                </select>
+                                                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese Nombre de la Categoría" required>
                                             </div>
                                         </div>
                                     </div>

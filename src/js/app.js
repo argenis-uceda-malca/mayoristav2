@@ -28,6 +28,8 @@ function iniciarApp() {
     eliminarCarrito();
     cambiarCantidad();
     Verificarcheckbox();
+    VerificarcheckboxDelivery();
+    confirmarCheckup();
     //consultarAPI(); // Consulta la API en el backend de PHP
 
     //idCliente();
@@ -275,6 +277,79 @@ function Verificarcheckbox() {
         } else {
             $(this).prop('value', '0');
         }
+    });
+}
+
+function VerificarcheckboxDelivery() {
+    $('#payment').click(function () {
+        var miCheckbox = $(this);
+
+        if (miCheckbox.prop('checked')) {
+            $(this).prop('value', '1');
+        } else {
+            $(this).prop('value', '0');
+        }
+    });
+}
+
+function confirmarCheckup(){
+    $('#crearVenta').on('submit', function (e) {
+        e.preventDefault();
+        //alert("hola");
+        var datos = $(this).serializeArray();
+        console.log(datos);
+        $.ajax({
+            type: 'POST',
+            data: datos,
+            url: "/crearVenta",
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                var resultado = data;
+                if (resultado.resultado == 'contraentrega') {
+                    swal.fire(
+                        'Registro Exitoso',
+                        'Hemos recibido su pedido, estaremos llamandolo en los próximos minutos',
+                        'success'
+                    )
+                    setTimeout(function () {
+                        window.location.href = '/';
+                    }, 5000);
+
+                }
+                if (resultado.resultado == 'resumen') {      
+                    window.location.href = '/resumen?id=' + resultado.id;
+                }
+                if (resultado.resultado == 'vacio') {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        //timerProgressBar: true,
+                    })
+
+                    Toast.fire({
+                        icon: 'warning',
+                        title: 'Complete todos los campos'
+                    })
+                }
+                if (resultado.resultado == 'error') {
+                    swal.fire(
+                        'Error',
+                        'Error al agregar',
+                        'error'
+                    )
+                }
+            },
+            error: function (e) {
+                swal.fire(
+                    'UPS!!!',
+                    'Lo sentimos hubo un error inesperado',
+                    'error'
+                )
+            }
+        });
     });
 }
 

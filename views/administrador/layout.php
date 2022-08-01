@@ -9,8 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="/build/admin/image/png" sizes="16x16" href="/build/admin/assets/images/favicon.png">
-    <title>Mayorista</title>
+    <!--<link rel="icon" type="/build/admin/image/png" sizes="16x16" href="/build/admin/assets/images/favicon.png">-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/build/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/build/img/favicon//favicon-16x16.png">
+    <link rel="manifest" href="/build/img/favicon//site.webmanifest">
+    <link rel="mask-icon" href="/build/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>HIN Inversiones</title>
     <!-- Custom CSS -->
     <link href="/build/admin/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="/build/admin/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
@@ -27,11 +34,11 @@
 
 <body>
 
-	<?php echo $contenido; ?>
+    <?php echo $contenido; ?>
 
-	<?php
-	echo $script ?? '';
-	?>
+    <?php
+    echo $script ?? '';
+    ?>
 
 </body>
 

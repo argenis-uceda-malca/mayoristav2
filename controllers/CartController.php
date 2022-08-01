@@ -22,13 +22,13 @@ class CartController
 
       $productos = Producto::SQL($consulta);
 
-      
+
 
       //Llenando la tabla de carrito de compras
       if (isset($_SESSION['carrito'])) {
         if (isset($_GET['id'])) {
           $arreglo = $_SESSION['carrito'];
-          
+
           $encontro = false;
           $numero = 0;
           for ($i = 0; $i < count($arreglo); $i++) {
@@ -51,6 +51,7 @@ class CartController
               $nombre = $producto->nombre;
               $precio = $producto->precio;
               $idcategoria = $producto->idcategoria;
+              //$imagen = $producto->imagen;
               //echo $idcategoria;
             }
 
@@ -59,6 +60,7 @@ class CartController
               'nombre' => $nombre,
               'precio' => $precio,
               'idcategoria' => $idcategoria,
+              //'imagen' => $imagen,
               'cantidad' => 1
             );
             array_push($arreglo, $arregloNuevo);
@@ -69,7 +71,7 @@ class CartController
         }
       } else {
         if (isset($_GET['id'])) {
-          
+
           foreach ($productos as $key => $producto) {
             $nombre = $producto->nombre;
             $precio = $producto->precio;
@@ -83,7 +85,7 @@ class CartController
             'idcategoria' => $idcategoria,
             'cantidad' => 1
           );
-          
+
           $_SESSION['carrito'] = $arreglo;
           //debuguear($_SESSION);
           header('Location:/cart');
@@ -159,6 +161,15 @@ class CartController
   public static function guardar(Router $router)
   {
     session_start();
+    //verificar campos vacios
+    foreach($_POST as $value){
+      if($value == ''){
+        $respuesta = array(
+          'resultado' => 'vacio',
+        );
+        die(json_encode($respuesta));
+      }
+    }
 
     $nombres = $_POST['nombres'];
     $apellidos = $_POST['apellidos'];
@@ -171,22 +182,26 @@ class CartController
     $resultado = $venta->guardar();
 
     //debuguear($resultado);
-    
+
     $busqueda = Cliente::where('dni', $dni);
 
-    if($busqueda == NULL){
+    if ($busqueda == NULL) {
       $respuesta = $cliente->guardar();
       $id_usuario = $respuesta['id'];
       //debuguear($resultado);
-    }else{
-        $id_usuario = ($busqueda->id);
+    } else {
+      $id_usuario = ($busqueda->id);
     }
 
     $id = $resultado['id'];
     $idProductos = $_POST['idProdcuto'];
     $totalProducto = $_POST['totalProducto'];
     $cantidad = $_POST['cantidad'];
-    $estado = $_POST['estado'];
+
+    $estado = 0;
+    if(isset($_POST['estado'])){
+      $estado = $_POST['estado'];
+    }
 
     $i = 0;
 
@@ -206,12 +221,22 @@ class CartController
     //echo ($resultado['resultado']);
 
     if ($resultado) {
-      
+
       if ($estado == 1) {
-        header('Location: /');
+        //header('Location: /');
+        $_SESSION = [];
+        $respuesta = array(
+          'resultado' => 'contraentrega',
+          'post' => $_POST
+        );
       } else {
-        header('Location: /resumen?id=' . $id);
+        //header('Location: /resumen?id=' . $id);
+        $respuesta = array(
+          'resultado' => 'resumen',
+          'id' => $id
+        );
       }
+      die(json_encode($respuesta));
     }
   }
 

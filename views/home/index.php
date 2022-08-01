@@ -30,10 +30,10 @@ include_once __DIR__ . '/../templates/header.php';
 				</div>
 				<div class="hero__item set-bg" data-setbg="/build/img/hero/banner.jpg">
 					<div class="hero__text">
-						<span>FRUIT FRESH</span>
-						<h2>Vegetable <br />100% Organic</h2>
+						<span>FRUTA FRESCA</span>
+						<h2>Vegetable <br />100% Orgánico</h2>
 						<p>Free Pickup and Delivery Available</p>
-						<a href="#" class="primary-btn">SHOP NOW</a>
+						<a href="#" class="primary-btn">Comprar ahora</a>
 					</div>
 				</div>
 			</div>
@@ -49,27 +49,27 @@ include_once __DIR__ . '/../templates/header.php';
 			<div class="categories__slider owl-carousel">
 				<div class="col-lg-3">
 					<div class="categories__item set-bg" data-setbg="/build/img/categories/cat-1.jpg">
-						<h5><a href="#">Fresh Fruit</a></h5>
+						<h5><a >Fresh Fruit</a></h5>
 					</div>
 				</div>
 				<div class="col-lg-3">
 					<div class="categories__item set-bg" data-setbg="/build/img/categories/cat-2.jpg">
-						<h5><a href="#">Dried Fruit</a></h5>
+						<h5><a >Dried Fruit</a></h5>
 					</div>
 				</div>
 				<div class="col-lg-3">
 					<div class="categories__item set-bg" data-setbg="/build/img/categories/cat-3.jpg">
-						<h5><a href="#">Vegetables</a></h5>
+						<h5><a >Vegetables</a></h5>
 					</div>
 				</div>
 				<div class="col-lg-3">
 					<div class="categories__item set-bg" data-setbg="/build/img/categories/cat-4.jpg">
-						<h5><a href="#">drink fruits</a></h5>
+						<h5><a >drink fruits</a></h5>
 					</div>
 				</div>
 				<div class="col-lg-3">
 					<div class="categories__item set-bg" data-setbg="/build/img/categories/cat-5.jpg">
-						<h5><a href="#">drink fruits</a></h5>
+						<h5><a >drink fruits</a></h5>
 					</div>
 				</div>
 			</div>
@@ -109,15 +109,15 @@ include_once __DIR__ . '/../templates/header.php';
 				foreach ($categorias as $key => $categoria) {
 					if ($producto->idcategoria == $categoria->id) {
 			?>
-						<div class="col-lg-3 col-md-4 col-sm-6 mix categoria<?php echo $categoria->id ?>">
+						<div class="col-lg-3 col-md-4 col-sm-6 mix categoria<?php echo $categoria->id ?>" >
 							<div class="featured__item">
-								<div class="featured__item__pic set-bg" data-setbg="/build/img/featured/feature-2.jpg">
+								<div class="featured__item__pic set-bg" data-setbg="/build/img/imgProducto/<?php echo $producto->imagen; ?>">
 									<ul class="featured__item__pic__hover">
 										<li>
-											<a href="#"><i class="fa fa-heart"></i></a>
+											<a ><i class="fa fa-heart"></i></a>
 										</li>
 										<li>
-											<a href="#"><i class="fa fa-retweet"></i></a>
+											<a ><i class="fa fa-retweet"></i></a>
 										</li>
 										<li>
 											<a href="/cart?id=<?php echo $producto->id; ?>"><i class="fa fa-shopping-cart"></i></a>
@@ -125,7 +125,7 @@ include_once __DIR__ . '/../templates/header.php';
 									</ul>
 								</div>
 								<div class="featured__item__text">
-									<h6><a href="#"><?php echo $producto->nombre; ?></a></h6>
+									<h6><a href="/cart?id=<?php echo $producto->id; ?>"><?php echo $producto->nombre; ?></a></h6>
 									<h5>S/. <?php echo $producto->precio; ?></h5>
 								</div>
 							</div>
@@ -385,6 +385,27 @@ include_once __DIR__ . '/../templates/header.php';
 </div>
 <!-- Map End -->
 
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <?php
 include_once __DIR__ . '/../templates/footer.php';
