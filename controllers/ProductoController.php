@@ -30,7 +30,7 @@ class ProductoController
         $categorias = Categorias::all();
         $marcas = Marcas::all();
 
-        $router->renderAdmin('home/viewProducto', [
+        $router->renderAdmin('home/ViewProducto', [
             'arreglo' => $arreglo,
             'categorias' => $categorias,
             'marcas' => $marcas
