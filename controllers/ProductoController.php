@@ -98,7 +98,7 @@ class ProductoController
                 );
             }
         }
-        die(json_encode($respuesta));
+        die(json_encode($respuesta, JSON_UNESCAPED_UNICODE));
     }
 
     public static function editarProducto()
@@ -136,7 +136,7 @@ class ProductoController
                 );
             }
         }
-        die(json_encode($respuesta));
+        die(json_encode($respuesta, JSON_UNESCAPED_UNICODE));
     }
 
     
