@@ -21,7 +21,8 @@
         "mercadopago/dx-php": "^2.4",
         "setasign/fpdf": "1.8",
         "dompdf/dompdf": "^2.0",
-        "intervention/image": "^2.7"
+        "intervention/image": "^2.7",
+        "vlucas/phpdotenv": "^5.4"
     },
     "dependencies": {
         "@angular/common": {

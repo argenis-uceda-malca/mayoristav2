@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ . '../../../templates/header.php';
+include_once __DIR__ . '../../../templates/header_secod.php';
 ?>
 
 <script src='https://sdk.mercadopago.com/js/v2'></script>

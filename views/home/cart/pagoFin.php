@@ -1,7 +1,7 @@
 <body>
 
     <?php
-    include_once __DIR__ . '../../../templates/header.php';
+    include_once __DIR__ . '../../../templates/header_secod.php';
     ?>
     <!-- Hero Section Begin -->
     <section class="hero hero-normal">
@@ -36,7 +36,7 @@
     <!-- Hero Section End -->
 
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="/build/img/breadcrumb.jpg">
+    <section class="breadcrumb-section set-bg" data-setbg="/build/img/hero/carousel-1.png">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
