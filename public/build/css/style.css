@@ -704,6 +704,7 @@ ol {
 	display: flex;
 	align-items: center;
 	padding-left: 75px;
+	align-items: stretch
 }
 
 .hero__text span {

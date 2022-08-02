@@ -1,4 +1,4 @@
-    <!-- Page Preloder -->
+<!-- Page Preloder -->
     <!--
     <div id="preloder">
         <div class="loader"></div>
@@ -9,7 +9,7 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="/"><img src="/build/img/logoPrincipal-removebg-preview.png" style="width: 100px; height: 100px;" alt=""></a>
+            <a href="/"><img src="/build/img/logoPrincipal.png" style="width: 100px; height: 100px;" alt=""></a>
         </div>
         <div class="humberger__menu__cart">
             <ul>
@@ -54,17 +54,6 @@
                 </li>-->
                 <li><a href="/nosotros">Nosotros</a></li>
                 <li><a href="/contacto">Contacto</a></li>
-                <li>
-                    <div class="hero__search__phone">
-                        <div class="hero__search__phone__icon">
-                            <i class="fa fa-phone"></i>
-                        </div>
-                        <div class="hero__search__phone__text">
-                            <h5>+51 991 702 781</h5>
-                            <span>Atención 24/7 </span>
-                        </div>
-                    </div>
-                </li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -82,7 +71,7 @@
     <!-- Humberger End -->
 
     <!-- Header Section Begin -->
-    <header class="header" style="padding-bottom: 30px;">
+    <header class="header">
         <div class="header__top">
             <div class="container">
                 <div class="row">
@@ -117,54 +106,52 @@
                 </div>
             </div>
         </div>
-        <div class="row hero__item set-bg" style="height: 900px; align-content: flex-start" data-setbg="/build/img/hero/carousel-1.png">
-            <div class="container" style="padding-bottom: 0; margin-bottom: 0; max-height: 200px; ">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="header__logo">
-                            <a href="/"><img src="/build/img/logoPrincipal-removebg-preview.png" style="width: 100px; height: 100px;" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <nav class="header__menu">
-                            <ul>
-                                <li class="active"><a href="/">Inicio</a></li>
-                                <!--<li><a href="./shop-grid.html">Productos</a></li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="header__menu__dropdown">
-                                        <li><a href="./shop-details.html">Shop Details</a></li>
-                                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                        <li><a href="./checkout.html">Check Out</a></li>
-                                        <li><a href="./blog-details.html">Blog Details</a></li>
-                                    </ul>
-                                </li>-->
-                                <li><a href="/nosotros">Nosotros</a></li>
-                                <li><a href="/contacto">Contacto</a></li>
-
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="header__cart">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-heart"></i> <span></span></a></li>
-                                <li><a href="/cart"><i class="fa fa-shopping-bag"></i> <span>
-                                            <?php
-                                            if (isset($_SESSION['carrito'])) {
-                                                echo count($_SESSION['carrito']);
-                                            } else {
-                                                echo 0;
-                                            }
-                                            ?>
-                                        </span></a></li>
-                            </ul>
-                            <div class="header__cart__price"><span>Carrito</span></div>
-                        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="/"><img src="/build/img/logoPrincipal.png" style="width: 100px; height: 100px;" alt=""></a>
                     </div>
                 </div>
-                <div class="humberger__open">
-                    <i class="fa fa-bars"></i>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="/">Inicio</a></li>
+                            <!--<li><a href="./shop-grid.html">Productos</a></li>
+                            <li><a href="#">Pages</a>
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="./shop-details.html">Shop Details</a></li>
+                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                                    <li><a href="./checkout.html">Check Out</a></li>
+                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                </ul>
+                            </li>-->
+                            <li><a href="/nosotros">Nosotros</a></li>
+                            <li><a href="/contacto">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span></span></a></li>
+                            <li><a href="/cart"><i class="fa fa-shopping-bag"></i> <span>
+                                        <?php
+                                        if (isset($_SESSION['carrito'])) {
+                                            echo count($_SESSION['carrito']);
+                                        } else {
+                                            echo 0;
+                                        }
+                                        ?>
+                                    </span></a></li>
+                        </ul>
+                        <div class="header__cart__price"><span>Carrito</span></div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Header Section End -->
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->

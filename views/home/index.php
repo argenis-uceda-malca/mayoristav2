@@ -2,74 +2,78 @@
 include_once __DIR__ . '/../templates/header.php';
 ?>
 
-<!-- Hero Section Begin -->
-<section class="hero">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="hero__search">
-					<div class="hero__search__form">
-						<form action="#">
-							<div class="hero__search__categories">
-								All Categories
-								<span class="arrow_carrot-down"></span>
+		<!-- Hero Section Begin -->
+		<div class="container">
+			<section class="hero">
+				<div class="row ">
+					<div class="col-lg-12">
+						<div class="hero__search container">
+							<div class="hero__search__form">
+								<form action="#">
+									<div class="hero__search__categories">
+										Categorias
+										<span class="arrow_carrot-down"></span>
+									</div>
+									<input type="text" placeholder="Qué necesitas?">
+									<button type="submit" class="site-btn">BUSCAR</button>
+								</form>
 							</div>
-							<input type="text" placeholder="What do yo u need?">
-							<button type="submit" class="site-btn">SEARCH</button>
-						</form>
-					</div>
-					<div class="hero__search__phone">
-						<div class="hero__search__phone__icon">
-							<i class="fa fa-phone"></i>
+							<div class="hero__search__phone">
+								<div class="hero__search__phone__icon">
+									<i class="fa fa-phone"></i>
+								</div>
+								<div class="hero__search__phone__text">
+									<h5>+51 991 702 781</h5>
+									<span>Atención 24/7 </span>
+								</div>
+							</div>
 						</div>
-						<div class="hero__search__phone__text">
-							<h5>+51 991 702 781</h5>
-							<span>Atención 24/7 </span>
+						<div class="">
+							<div class="hero__text">
+								<span>FRUTA FRESCA</span>
+								<h2>Vegetable <br />100% Orgánico</h2>
+								<p>Free Pickup and Delivery Available</p>
+								<a href="#" class="primary-btn">Compra ahora</a>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="hero__item set-bg" data-setbg="/build/img/hero/banner.jpg">
-					<div class="hero__text">
-						<span>FRUTA FRESCA</span>
-						<h2>Vegetable <br />100% Orgánico</h2>
-						<p>Free Pickup and Delivery Available</p>
-						<a href="#" class="primary-btn">Comprar ahora</a>
-					</div>
-				</div>
-			</div>
+			</section>
 		</div>
 	</div>
+</header>
+
 </section>
 <!-- Hero Section End -->
 
 <!-- Categories Section Begin -->
-<section class="categories">
+<section class="categories" class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
 	<div class="container">
 		<div class="row">
 			<div class="categories__slider owl-carousel">
 				<div class="col-lg-3">
 					<div class="categories__item set-bg" data-setbg="/build/img/categories/cat-1.jpg">
-						<h5><a >Fresh Fruit</a></h5>
+						<h5><a>Fresh Fruit</a></h5>
 					</div>
 				</div>
 				<div class="col-lg-3">
 					<div class="categories__item set-bg" data-setbg="/build/img/categories/cat-2.jpg">
-						<h5><a >Dried Fruit</a></h5>
+						<h5><a>Dried Fruit</a></h5>
 					</div>
 				</div>
 				<div class="col-lg-3">
 					<div class="categories__item set-bg" data-setbg="/build/img/categories/cat-3.jpg">
-						<h5><a >Vegetables</a></h5>
+						<h5><a>Vegetables</a></h5>
 					</div>
 				</div>
 				<div class="col-lg-3">
 					<div class="categories__item set-bg" data-setbg="/build/img/categories/cat-4.jpg">
-						<h5><a >drink fruits</a></h5>
+						<h5><a>drink fruits</a></h5>
 					</div>
 				</div>
 				<div class="col-lg-3">
 					<div class="categories__item set-bg" data-setbg="/build/img/categories/cat-5.jpg">
-						<h5><a >drink fruits</a></h5>
+						<h5><a>drink fruits</a></h5>
 					</div>
 				</div>
 			</div>
@@ -109,15 +113,15 @@ include_once __DIR__ . '/../templates/header.php';
 				foreach ($categorias as $key => $categoria) {
 					if ($producto->idcategoria == $categoria->id) {
 			?>
-						<div class="col-lg-3 col-md-4 col-sm-6 mix categoria<?php echo $categoria->id ?>" >
+						<div class="col-lg-3 col-md-4 col-sm-6 mix categoria<?php echo $categoria->id ?>">
 							<div class="featured__item">
 								<div class="featured__item__pic set-bg" data-setbg="/build/img/imgProducto/<?php echo $producto->imagen; ?>">
 									<ul class="featured__item__pic__hover">
 										<li>
-											<a ><i class="fa fa-heart"></i></a>
+											<a><i class="fa fa-heart"></i></a>
 										</li>
 										<li>
-											<a ><i class="fa fa-retweet"></i></a>
+											<a><i class="fa fa-retweet"></i></a>
 										</li>
 										<li>
 											<a href="/cart?id=<?php echo $producto->id; ?>"><i class="fa fa-shopping-cart"></i></a>
@@ -388,23 +392,23 @@ include_once __DIR__ . '/../templates/header.php';
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
 </div>
 
 <?php

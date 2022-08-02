@@ -1,22 +1,22 @@
 <body>
 
   <?php
-  include_once __DIR__ . '../../../templates/header.php';
+  include_once __DIR__ . '../../../templates/header_secod.php';
   ?>
   <!-- Hero Section Begin -->
-  <section class="hero hero-normal">
+  <section class="hero hero-normal" >
     <div class="container">
       <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-12">
           <div class="hero__search">
             <div class="hero__search__form">
               <form action="#">
                 <div class="hero__search__categories">
-                  All Categories
+                  Categorías
                   <span class="arrow_carrot-down"></span>
                 </div>
                 <input type="text" placeholder="What do yo u need?">
-                <button type="submit" class="site-btn">SEARCH</button>
+                <button type="submit" class="site-btn">BUSCAR</button>
               </form>
             </div>
             <div class="hero__search__phone">
@@ -24,8 +24,8 @@
                 <i class="fa fa-phone"></i>
               </div>
               <div class="hero__search__phone__text">
-                <h5>+65 11.188.888</h5>
-                <span>support 24/7 time</span>
+                <h5>+51 991 702 781</h5>
+                <span>Atención 24/7 time</span>
               </div>
             </div>
           </div>
@@ -36,7 +36,7 @@
   <!-- Hero Section End -->
 
   <!-- Breadcrumb Section Begin -->
-  <section class="breadcrumb-section set-bg">
+  <section class="breadcrumb-section set-bg" style="background-position: bottom center;" data-setbg="/build/img/hero/carousel-1.png">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">

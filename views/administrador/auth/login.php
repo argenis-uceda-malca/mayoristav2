@@ -69,7 +69,7 @@
                                     <button type="submit" class="btn btn-block btn-dark">Ingresar</button>
                                 </div>
                                 <div class="col-lg-12 text-center mt-5">
-                                    No recuerdas tu contraseña?<br> <a href="#" class="text-danger">Click aquí</a>
+                                    Regresar al inicio?<br> <a href="/" class="text-danger">Click aquí</a>
                                 </div>
                             </div>
                         </form>

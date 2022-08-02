@@ -18,6 +18,7 @@ use Controllers\MarcaController;
 use Controllers\ContactoController;
 use Controllers\NosotrosController;
 use Controllers\PagoFinalizado;
+use Controllers\Error404;
 use MVC\Router;
 $router = new Router();
 
@@ -65,6 +66,9 @@ $router->post('/login', [AdministradorController::class, 'login']);
 $router->get('/logout', [AdministradorController::class, 'logout']);
 
 $router->get('/api/servicios', [APIController::class, 'index']);
+
+$router->get('/404', [Error404::class, 'Error404']);
+
 
 
 

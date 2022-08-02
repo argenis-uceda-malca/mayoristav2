@@ -1,7 +1,7 @@
 <body>
 
     <?php
-    include_once __DIR__ . '../../../templates/header.php';
+    include_once __DIR__ . '../../../templates/header_secod.php';
     ?>
     <!-- Hero Section Begin -->
     <section class="hero hero-normal">

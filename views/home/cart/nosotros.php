@@ -58,7 +58,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-12 col-md-12 order-md-1 order-1">
+                <div class="col-lg-6 col-md-12 order-md-1 order-1">
                     <div class="blog__details__text">
                         <img src="img/blog/details/details-pic.jpg" alt="">
                         <h3 class="text-center">¿Quiénes Somos?</h3>
@@ -80,6 +80,7 @@
         </div>
     </section>
     <!-- Blog Details Section End -->
+</div>
     <section class="blog-details spad">
         <div class="container">
             <div class="row">
