@@ -78,7 +78,7 @@ $preference->save();
                             ?>
                                 <div class="blog__sidebar__recent__item">
                                     <div class="blog__sidebar__recent__item__pic">
-                                        <img src="build/img/blog/sidebar/sr-1.jpg" alt="">
+                                        <img src="/build/img/imgProducto/<?php echo $venta->imagen; ?>" alt="" style="max-width: 100px; border-radius: 10px;">
                                     </div>
                                     <div class="blog__sidebar__recent__item__text">
                                         <p style="margin:0"><b>Producto: </b><?php echo $venta->producto; ?> </p>
@@ -106,32 +106,80 @@ $preference->save();
                     <p><?php echo $nombre; ?> <?php echo $apellidos; ?> estas a un paso de completar tu compra, verifica que los datos de tu compra sean
                         correctos </p>
 
-
-                    <div class="row justify-content-start align-items-center"">
-                        <div class=" col-4">
-                        <img src="build/img/mercadopago.jpg">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-7 col-sm-6 col-6">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="row justify-content-start text-center">
+                                    <div class="col-12 justify-content-center">
+                                        <img src="build/img/mercadopago.jpg" style="max-width: 200px;">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 text-center">
+                                    <div class="cho-container" class="col-12 align-items-center"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-6 col-6">
+                            <div class="blog__sidebar__recent__item__pic">
+                                <button type="button" class="btn " data-toggle="modal" data-target="#modalYape">
+                                    <img src="build/img/btnYape.png" style="max-width: 195px;">
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="cho-container" class="col-8 align-items-center"></div>
-
                 </div>
 
-
-
-                <ul>
-
-                    <li><b>Ecuentranos en </b>
-                        <div class="share">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                        </div>
-                    </li>
-                </ul>
             </div>
         </div>
 
     </div>
     </div>
 </section>
+
+<!--Yape Modal -->
+<div class="modal fade " id="modalYape" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered " role="document">
+        <div class="modal-content  " style="border-radius: 15px;">
+            <div class="modal-header align-items-center" style="border-radius: 15px 15px  50px 50px; background-color: #700376;">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <img src="build/img/yape-logo.png" style=" max-height: 120px; padding-right: 20px; padding-left: 20px;">
+                    </div>
+                </div>
+                <h6 class="modal-title text-center " id="exampleModalLongTitle" style="color: #ffffff; padding-right: 20px;">CON TU CELULAR INGRESA A <b> YAPE </b> Y ESCANEA ESTE <b> CÓDIGO QR </b></h6>
+
+            </div>
+            <div class="modal-body">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <img src="build/img/qr.png">
+                    </div>
+                </div>
+            </div>
+            <div style="justify-content: start; border-top:0px; padding: 0px 20%;">
+                <div class="row ">
+                    <div class="col-8" >
+                        <p><b>Total a Pagar: </b></p>
+                    </div>
+                    <div class="col-4">
+                        <p style="color: #e23939 ; text-align: end;"><b> S/. <?php echo $total; ?> </b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer " style="justify-content: center; border-top:0px">
+                <div class="row ">
+                    <div class="col-12" style="background-color: #817d7d24; border-radius: 8px;">
+                        <a href="/pagoFin" class="btn " >Confirmar que se realizo el pago</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php
+include_once __DIR__ . '../../../templates/footer.php';
+?>
 
 <?php
 $script = "
@@ -163,7 +211,7 @@ $script = "
         },
         render: {
             container: ".cho-container", // Indica el nombre de la clase donde se mostrará el botón de pago
-            label: "Pagar con Mercado Pago", // Cambia el texto del botón de pago (opcional)
+            label: "Pagar", // Cambia el texto del botón de pago (opcional)
         },
     });
 </script>

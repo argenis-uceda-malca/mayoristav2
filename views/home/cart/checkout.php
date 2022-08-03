@@ -180,7 +180,7 @@ include_once __DIR__ . '../../../templates/header_secod.php';
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <p>El costo del delivery para San Luis en "GRATIS", para otro distrito el costos es de es S/.8 soles </p>
+                            <p>El costo del delivery para San Luis es "GRATIS", para otro distrito el costos es de es S/.8 soles </p>
                             <p>Seleccione la casilla si desea delivery </p>
 
                             <!--<input type="hidden" name="fecha" value="2022">-->

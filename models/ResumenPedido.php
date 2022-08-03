@@ -4,7 +4,7 @@ namespace Model;
 
 class ResumenPedido extends ActiveRecord {
     protected static $tabla = 'carrito';
-    protected static $columnasDB = ['ventaId', 'id_producto', 'cantidad', 'total', 'id_usuario', 'producto', 'nombres', 'apellidos', 'dni','email', 'telefono'];
+    protected static $columnasDB = ['ventaId', 'id_producto', 'cantidad', 'total', 'id_usuario', 'producto', 'nombres', 'apellidos', 'dni','email', 'telefono', 'imagen'];
 
     public $ventaId;
     public $id_producto;
@@ -17,6 +17,7 @@ class ResumenPedido extends ActiveRecord {
     public $dni;
     public $email;
     public $telefono;
+    public $imagen;
 
 
     public function __construct()
@@ -32,5 +33,6 @@ class ResumenPedido extends ActiveRecord {
         $this->dni = $args['dni'] ?? '';
         $this->email = $args['email'] ?? '';
         $this->telefono = $args['telefono'] ?? '';
+        $this->imagen = $args['imagen'] ?? '';
     }
 }

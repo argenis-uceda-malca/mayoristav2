@@ -43,9 +43,12 @@ function verificarLogin() {
                 var resultado = data;
                 if (resultado.resultado == 'exito') {
                     swal.fire(
-                        'Login Exitoso',
-                        'Bienvenido ' + resultado.usuario,
-                        'success'
+                        {
+                            icon: 'success',
+                            title: 'Login Exitoso',
+                            text: 'Bienvenido ' + resultado.usuario,
+                            showConfirmButton: false,
+                        }
                     )
                     setTimeout(function () {
                         window.location.href = '/admin';
@@ -161,7 +164,7 @@ function ActualizarProducto() {
         //alert("hola");
         //var datos = $(this).serializeArray();
         var datos = new FormData(this);
-        
+
         $.ajax({
             type: 'POST',
             data: datos,
@@ -214,7 +217,7 @@ function AddProducto() {
         //var datos = $(this).serializeArray();
         var datos = new FormData(this);
         console.log(datos);
-        
+
         $.ajax({
             type: 'POST',
             data: datos,

@@ -80,7 +80,7 @@
                 ?>
                     <tr>
                       <td class="shoping__cart__item">
-                        <img src="/build/img/cart/cart-1.jpg" alt="">
+                        <img src="/build/img/imgProducto/<?php echo $arregloCarrito[$i]['imagen']; ?>" alt="Producto" style="max-width: 100px;">
                         
                         <h5><?php echo $arregloCarrito[$i]['nombre']; ?></h5>
                       </td>

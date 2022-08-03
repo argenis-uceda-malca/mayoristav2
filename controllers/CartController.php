@@ -51,7 +51,7 @@ class CartController
               $nombre = $producto->nombre;
               $precio = $producto->precio;
               $idcategoria = $producto->idcategoria;
-              //$imagen = $producto->imagen;
+              $imagen = $producto->imagen;
               //echo $idcategoria;
             }
 
@@ -60,7 +60,7 @@ class CartController
               'nombre' => $nombre,
               'precio' => $precio,
               'idcategoria' => $idcategoria,
-              //'imagen' => $imagen,
+              'imagen' => $imagen,
               'cantidad' => 1
             );
             array_push($arreglo, $arregloNuevo);
@@ -76,6 +76,7 @@ class CartController
             $nombre = $producto->nombre;
             $precio = $producto->precio;
             $idcategoria = $producto->idcategoria;
+            $imagen = $producto->imagen;
           }
 
           $arreglo[] = array(
@@ -83,6 +84,7 @@ class CartController
             'nombre' => $nombre,
             'precio' => $precio,
             'idcategoria' => $idcategoria,
+            'imagen' => $imagen,
             'cantidad' => 1
           );
 
@@ -246,7 +248,7 @@ class CartController
 
     $id = $_GET['id'];
 
-    $consulta = "SELECT c.ventaId , c.id_producto, c.cantidad, c.total, c.id_usuario, p.nombre as producto, cli.nombres, cli.apellidos, cli.dni, cli.email, cli.telefono ";
+    $consulta = "SELECT c.ventaId , c.id_producto, c.cantidad, c.total, c.id_usuario, p.nombre as producto, cli.nombres, cli.apellidos, cli.dni, cli.email, cli.telefono , p.imagen ";
     $consulta .= "FROM ventas v ";
     $consulta .= "INNER JOIN carrito c ON v.id = c.ventaId ";
     $consulta .= "INNER JOIN clientes cli ON cli.id = c.id_usuario ";

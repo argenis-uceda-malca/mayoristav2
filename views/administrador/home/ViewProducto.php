@@ -176,7 +176,7 @@ include_once __DIR__ . '/../../templates/administrador/sidebar.php';
                                             <label>Cargar de Imagen</label>
                                             <div class="input-group mb-3">
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="inputGroupFile01" name="archivo_imagen">
+                                                    <input type="file" class="custom-file-input" id="inputGroupFile01" name="archivo_imagen" required>
                                                     <label class="custom-file-label" for="inputGroupFile01">Buscar Archivo</label>
                                                 </div>
                                             </div>
@@ -264,7 +264,7 @@ include_once __DIR__ . '/../../templates/administrador/sidebar.php';
                                             <label>Cargar de Imagen</label>
                                             <div class="input-group mb-3">
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="inputGroupFile01" name="archivo_imagen">
+                                                    <input type="file" class="custom-file-input" id="inputGroupFile01" name="archivo_imagen" required>
                                                     <label class="custom-file-label" for="inputGroupFile01">Buscar Archivo</label>
                                                 </div>
                                             </div>

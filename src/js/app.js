@@ -30,6 +30,7 @@ function iniciarApp() {
     Verificarcheckbox();
     VerificarcheckboxDelivery();
     confirmarCheckup();
+    
     //consultarAPI(); // Consulta la API en el backend de PHP
 
     //idCliente();
@@ -719,3 +720,4 @@ function VerificarCantidad() {
 
 
 }
+
