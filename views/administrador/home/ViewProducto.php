@@ -134,7 +134,7 @@ include_once __DIR__ . '/../../templates/administrador/sidebar.php';
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label>S/. Precio </label>
-                                            <input type="number" class="form-control" placeholder="S/." name="precio" id="precio" required>
+                                            <input type="number" step="any" class="form-control" placeholder="S/." name="precio" id="precio" required>
                                         </div>
                                     </div>
                                 </div>
@@ -221,7 +221,7 @@ include_once __DIR__ . '/../../templates/administrador/sidebar.php';
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label>Precio</label>
-                                            <input type="number" class="form-control" placeholder="S/." name="precio" id="precio" required>
+                                            <input type="number" step="any" class="form-control" placeholder="S/." name="precio" id="precio" required>
                                         </div>
                                     </div>
 

@@ -43,7 +43,7 @@
 
 	<div class="social-bar">
 		<a href="https://www.facebook.com/HIN-Inversiones-106561198751645" class="icon icon-facebook" target="_blank"></a>
-		<a href="#" class="icon icon-instagram" target="_blank"></a>
+		<a href="https://www.instagram.com/hin_inversiones2022/" class="icon icon-instagram" target="_blank"></a>
 	</div>
 
 </body>

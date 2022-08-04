@@ -69,8 +69,8 @@
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header__top__right__social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.facebook.com/HIN-Inversiones-106561198751645" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/hin_inversiones2022/" target="_blank"><i class="fa fa-instagram"></i></a>
         </div>
         <div class="humberger__menu__contact">
             <ul>
@@ -97,8 +97,8 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
                             <div class="header__top__right__social">
-                                <a href="/https://www.facebook.com/HIN-Inversiones-106561198751645"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="/https://www.facebook.com/HIN-Inversiones-106561198751645" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/hin_inversiones2022/" target="_blank"><i class="fa fa-instagram"></i></a>
                             </div>
                             <div class="header__top__right__language">
                                 <img src="/build/img/language.png" alt="">

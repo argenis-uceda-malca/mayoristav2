@@ -39,8 +39,8 @@
                         <button type="submit" class="site-btn">Subscribe</button>
                     </form>-->
                     <div class="footer__widget__social">
-                        <a href="https://www.facebook.com/HIN-Inversiones-106561198751645"><i class="fa fa-facebook"></i></a>
-                        <a ><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/HIN-Inversiones-106561198751645" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/hin_inversiones2022/" target="_blank"><i class="fa fa-instagram"></i></a>
                     </div>
                 </div>
             </div>

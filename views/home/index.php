@@ -2,45 +2,45 @@
 include_once __DIR__ . '/../templates/header.php';
 ?>
 
-		<!-- Hero Section Begin -->
-		<div class="container">
-			<section class="hero">
-				<div class="row ">
-					<div class="col-lg-12">
-						<div class="hero__search container">
-							<div class="hero__search__form">
-								<form action="#">
-									<div class="hero__search__categories">
-										Categorias
-										<span class="arrow_carrot-down"></span>
-									</div>
-									<input type="text" placeholder="Qué necesitas?">
-									<button type="submit" class="site-btn">BUSCAR</button>
-								</form>
+<!-- Hero Section Begin -->
+<div class="container">
+	<section class="hero">
+		<div class="row ">
+			<div class="col-lg-12">
+				<div class="hero__search container">
+					<div class="hero__search__form">
+						<form action="#">
+							<div class="hero__search__categories">
+								Categorias
+								<span class="arrow_carrot-down"></span>
 							</div>
-							<div class="hero__search__phone">
-								<div class="hero__search__phone__icon">
-									<i class="fa fa-phone"></i>
-								</div>
-								<div class="hero__search__phone__text">
-									<h5>+51 991 702 781</h5>
-									<span>Atención 24/7 </span>
-								</div>
-							</div>
+							<input type="text" placeholder="Qué necesitas?">
+							<button type="submit" class="site-btn">BUSCAR</button>
+						</form>
+					</div>
+					<div class="hero__search__phone">
+						<div class="hero__search__phone__icon">
+							<i class="fa fa-phone"></i>
 						</div>
-						<div class="">
-							<div class="hero__text">
-								<span>FRUTA FRESCA</span>
-								<h2>Vegetable <br />100% Orgánico</h2>
-								<p>Free Pickup and Delivery Available</p>
-								<a href="#" class="primary-btn">Compra ahora</a>
-							</div>
+						<div class="hero__search__phone__text">
+							<h5>+51 991 702 781</h5>
+							<span>Atención 24/7 </span>
 						</div>
 					</div>
 				</div>
-			</section>
+				<div class="">
+					<div class="hero__text">
+						<span>FRUTA FRESCA</span>
+						<h2>Vegetable <br />100% Orgánico</h2>
+						<p>Free Pickup and Delivery Available</p>
+						<a href="#" class="primary-btn">Compra ahora</a>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
+	</section>
+</div>
+</div>
 </header>
 
 </section>
@@ -121,7 +121,16 @@ include_once __DIR__ . '/../templates/header.php';
 											<a><i class="fa fa-heart"></i></a>
 										</li>
 										<li>
-											<a><i class="fa fa-retweet"></i></a>
+											<div class="boton-modal " 
+												data-target="<?php echo $producto->nombre; ?>" 
+												data-img="/build/img/imgProducto/<?php echo $producto->imagen; ?>" 
+												data-categoria="<?php echo $categoria->nombre ?>"
+												data-precio="<?php echo $producto->precio; ?>"
+												>
+												<label for="btn-modal">
+													<a><i class="fa fa-retweet"></i></a>
+												</label>
+											</div>
 										</li>
 										<li>
 											<a href="/cart?id=<?php echo $producto->id; ?>"><i class="fa fa-shopping-cart"></i></a>
@@ -138,11 +147,49 @@ include_once __DIR__ . '/../templates/header.php';
 				}
 			} ?>
 		</div>
-
-
 	</div>
 </section>
 <!-- Featured Section End -->
+
+
+
+
+<!--Ventana Modal-->
+<input type="checkbox" id="btn-modal">
+<div class="container-modal">
+	<div class="content-modal">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6" >
+				<div class="product__details__pic">
+					<div class="product__details__pic__item">
+						<img class="product__details__pic__item--large" id="modal_img_producto" src="" alt="" style="max-width: 270px; max-height: 270px;">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="product__details__text">
+					<h3 id="modal_nombre_producto">Nombre Producto</h3>
+					<h6 id="modal_categoria_producto" style="padding-bottom: 8px;"> </h6>
+					<div class="product__details__rating">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star-half-o"></i>
+					</div>
+					<div class="product__details__price" id="modal_precio_producto"><?php echo $producto->precio; ?></div>
+					<p id="modal_descripcion_producto">DEscripcion del producto</p>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+	<label for="btn-modal" class="cerrar-modal"></label>
+</div>
+<!--Fin de Ventana Modal-->
+
+
+
 
 <!-- Banner Begin -->
 <div class="banner">

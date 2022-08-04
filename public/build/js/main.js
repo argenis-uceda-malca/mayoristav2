@@ -46,8 +46,8 @@
     });
 
     /*------------------
-		Navigation
-	--------------------*/
+        Navigation
+    --------------------*/
     $(".mobile-menu").slicknav({
         prependTo: '#mobile-menu-wrap',
         allowParentLinks: true
@@ -89,7 +89,7 @@
     });
 
 
-    $('.hero__categories__all').on('click', function(){
+    $('.hero__categories__all').on('click', function () {
         $('.hero__categories ul').slideToggle(400);
     });
 
@@ -153,8 +153,8 @@
     });
 
     /*-----------------------
-		Price Range Slider
-	------------------------ */
+        Price Range Slider
+    ------------------------ */
     var rangeSlider = $(".price-range"),
         minamount = $("#minamount"),
         maxamount = $("#maxamount"),
@@ -179,8 +179,8 @@
     $("select").niceSelect();
 
     /*------------------
-		Single Product
-	--------------------*/
+        Single Product
+    --------------------*/
     $('.product__details__pic__slider img').on('click', function () {
 
         var imgurl = $(this).data('imgbigurl');
@@ -193,8 +193,18 @@
     });
 
     /*-------------------
-		Quantity change
-	--------------------- */
-   
+        Quantity change
+    --------------------- */
+    $('.boton-modal').on('click', function (e) {
+        var nombre = e.currentTarget.getAttribute("data-target");
+        var img = e.currentTarget.getAttribute("data-img");
+        var categoria = e.currentTarget.getAttribute("data-categoria");
+        var precio = e.currentTarget.getAttribute("data-precio");
+
+        $('#modal_nombre_producto').text(nombre);
+        $('#modal_img_producto').attr("src", img);
+        $('#modal_categoria_producto').text('Categotia: '+categoria);
+        $('#modal_precio_producto').text('S/. '+precio);
+    });
 
 })(jQuery);

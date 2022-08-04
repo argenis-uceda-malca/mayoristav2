@@ -21,9 +21,12 @@ MercadoPago\SDK::setAccessToken('TEST-2658067067371995-091118-9a053d5a9a56767ce6
 $preference = new MercadoPago\Preference();
 
 $preference->back_urls = array(
-    "success" => "http://localhost:8080/pagoFin",
+    /*"success" => "http://localhost:8080/pagoFin",
     "failure" => "http://localhost/",
-    "pending" => "http://localhost/"
+    "pending" => "http://localhost/"*/
+    "success" => "https://afternoon-beach-09728.herokuapp.com/pagoFin",
+    "failure" => "https://afternoon-beach-09728.herokuapp.com/",
+    "pending" => "https://afternoon-beach-09728.herokuapp.com/"
 );
 
 // Crea un ítem en la preferencia
