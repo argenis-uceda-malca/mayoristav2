@@ -16,7 +16,7 @@ const webp = require('gulp-webp');
 const paths = {
     scss: 'src/scss/**/*.scss',
     js: 'src/js/**/*.js',
-    imagenes: 'public/build/img/imgProducto/*',
+    imagenes: 'src/img/**/*',
     css: 'src/css/**/*.css'
 }
 
@@ -42,14 +42,14 @@ function javascript() {
 function imagenes() {
     return src(paths.imagenes)
         .pipe(cache(imagemin({ optimizationLevel: 3})))
-        .pipe(dest('public/build/img/imgProductoWebp'))
+        .pipe(dest('public/build/img'))
         .pipe(notify({ message: 'Imagen Completada'}));
 }
 
 function versionWebp() {
     return src(paths.imagenes)
         .pipe( webp() )
-        .pipe(dest('public/build/img/imgProductoWebp'))
+        .pipe(dest('public/build/img'))
         .pipe(notify({ message: 'Imagen Completada'}));
 }
 
@@ -57,13 +57,13 @@ function versionWebp() {
 function watchArchivos() {
     watch( paths.scss, css );
     watch( paths.js, javascript );
-    //watch( paths.imagenes, imagenes );
-    //watch( paths.imagenes, versionWebp );
+    watch( paths.imagenes, imagenes );
+    watch( paths.imagenes, versionWebp );
 }
   
 exports.css = css;
 exports.watchArchivos = watchArchivos;
-exports.default = parallel(css, javascript, /* imagenes, versionWebp,*/  watchArchivos ); 
+exports.default = parallel(css, javascript,  imagenes, versionWebp,  watchArchivos ); 
 
 
 /************************************************************************************************/

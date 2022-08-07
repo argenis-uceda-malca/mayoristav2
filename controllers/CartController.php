@@ -184,7 +184,6 @@ class CartController
     $resultado = $venta->guardar();
 
     //debuguear($resultado);
-
     $busqueda = Cliente::where('dni', $dni);
 
     if ($busqueda == NULL) {
@@ -206,7 +205,7 @@ class CartController
     }
 
     $i = 0;
-
+    //Insert a la tabla DetalleVenta
     foreach ($idProductos as $idProducto) {
       $args = [
         'ventaId' => $id,
@@ -261,5 +260,64 @@ class CartController
     $router->render('home/cart/miPedido', [
       'ventas' => $ventas
     ]);
+  }
+
+  public static function resumen2(Router $router){
+    session_start();
+    if(isset($_SESSION['carrito']) and isset($_SESSION['carrito'])){
+      $ventas = $_SESSION['carrito'];
+
+      //debuguear($ventas);
+      //debuguear($_SESSION['cliente']);
+      $cliente = $_SESSION['cliente'];
+      $dni = $_GET['id'];
+  
+      $router->render('home/cart/miPedido2', [
+        'ventas' => $ventas,
+      ]);
+    }else{
+      header('Location:/');
+    }
+    
+  }
+
+  public static function confirmar(Router $router){
+    session_start();
+    //verificar campos vacios
+    foreach($_POST as $value){
+      if($value == ''){
+        $respuesta = array(
+          'resultado' => 'vacio',
+        );
+        die(json_encode($respuesta));
+      }
+    }
+
+    //primero agregar al clientes y almacenarlo en una sessión 
+    //segundo, enviar el id del cliente hacia el ajax a travez de "respuesta"
+
+    $dni = s($_POST['dni']);
+
+    $arreglo[] = array(
+      'nombres' => s($_POST['nombres']),
+      'apellidos' => s($_POST['apellidos']),
+      'dni' => s($_POST['dni']),
+      'email' => s($_POST['email']),
+      'telefono' => s($_POST['telefono']),
+    );
+    $_SESSION['cliente'] = $arreglo;
+
+    $arreglo2[]= array(
+      'direccion'=>s($_POST['direccion']),
+      'referencias'=>s($_POST['referencias']),
+    );
+    $_SESSION['venta'] = $arreglo2;
+
+    $respuesta = array(
+      'resultado' => 'resumen2',
+      'id' => $dni,
+      'busqueda' => $arreglo
+    );
+    die(json_encode($respuesta));
   }
 }

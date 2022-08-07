@@ -321,6 +321,11 @@ function confirmarCheckup(){
                 if (resultado.resultado == 'resumen') {      
                     window.location.href = '/resumen?id=' + resultado.id;
                 }
+                if (resultado.resultado == 'resumen2'){
+                    window.location.href = '/resumen2?id=' + resultado.id;
+                    //console.log(resultado.busqueda);
+                }
+
                 if (resultado.resultado == 'vacio') {
                     const Toast = Swal.mixin({
                         toast: true,

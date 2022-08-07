@@ -28,8 +28,10 @@ $router->get('/cart', [CartController::class, 'cart']);
 $router->post('/eliminarCarrito', [CartController::class, 'eliminarCarrito']);
 $router->post('/actualizarCarrito', [CartController::class, 'actualizarCarrito']);
 $router->get('/checkout', [CartController::class, 'checkout']);
-$router->post('/crearVenta', [CartController::class, 'guardar']);
+//$router->post('/crearVenta', [CartController::class, 'guardar']);
+$router->post('/crearVenta', [CartController::class, 'confirmar']);
 $router->get('/resumen', [CartController::class, 'resumen']);
+$router->get('/resumen2', [CartController::class, 'resumen2']);
 $router->get('/contacto', [ContactoController::class, 'contacto']);
 $router->get('/nosotros', [NosotrosController::class, 'nosotros']);
 $router->get('/pagoFin', [PagoFinalizado::class, 'pagoFin']);
@@ -45,9 +47,12 @@ $router->get('/viewProducto', [ProductoController::class, 'viewProducto']);
 $router->get('/editProducto', [ProductoController::class, 'editProducto']);
 $router->post('/editarProducto', [ProductoController::class, 'addEditarProducto']);
 $router->post('/addProducto', [ProductoController::class, 'addEditarProducto']);
+$router->post('/eliminarProducto', [ProductoController::class, 'eliminarProducto']);
+
 $router->get('/viewColaborador', [ColaboradoresController::class, 'ViewColaboradores']);
 $router->post('/addEditarColaborador', [ColaboradoresController::class, 'addEditarColaborador']);
 $router->get('/viewCategorias', [CategoriaController::class, 'viewCategoria']);
+
 $router->post('/addEditarCategoria', [CategoriaController::class, 'addEditarCategoria']);
 $router->get('/viewMarcas', [MarcaController::class, 'viewMarca']);
 $router->post('/addEditarMarca', [MarcaController::class, 'addEditarMarca']);

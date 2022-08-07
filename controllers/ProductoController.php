@@ -139,5 +139,23 @@ class ProductoController
         die(json_encode($respuesta, JSON_UNESCAPED_UNICODE));
     }
 
+    public static function eliminarProducto(){
+        session_start();
+        isAuth();
+        
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = $_POST['id'];
+            $producto = Producto::find($id);
+            $producto->eliminar();
+            $respuesta = array(
+                'resultado' => 'exito',
+                'id_eliminado' => $id,
+                'id' => $id
+            );
+
+        }
+        die(json_encode($respuesta));
+    }
+
     
 }

@@ -97,7 +97,7 @@ include_once __DIR__ . '/../../templates/administrador/sidebar.php';
                                                 <button type="button" class="btn waves-effect waves-light btn-rounded btn-outline-secondary editbtn" data-toggle="modal" data-target="#myModalProducto" data-idcategoria="<?php echo $producto->idcategoria; ?>" id=""><i class="fa fa-edit" aria-hidden="true"></i></button>
                                             </td>
                                             <td class="border-top-0 text-center px-2 py-4">
-                                                <a href="#" type="button" class="btn waves-effect waves-light btn-rounded btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                                <button  type="button"  data-id="<?php echo $producto->id; ?>" class="btn waves-effect waves-light btn-rounded btn-outline-danger eliminartbtn"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                             </td>
 
                                         </tr>

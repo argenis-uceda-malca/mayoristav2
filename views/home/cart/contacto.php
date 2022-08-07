@@ -24,8 +24,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
+                                <h5>+51 991 702 781</h5>
+                                <span>soporte 24/7 </span>
                             </div>
                         </div>
                     </div>

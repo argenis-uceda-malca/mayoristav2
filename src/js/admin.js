@@ -11,6 +11,7 @@ function iniciarApp() {
     editarTabla();
     ObtenerProductoPorId();
     ActualizarProductoModal();
+    EliminarProducto();
     EstadoModal();
     ActualizarColaboradorModal();
     ActualizarColaborador();
@@ -287,6 +288,69 @@ function ActualizarProductoModal() {
         $('#idcategoria').val($cat);
         $('#stock').val(datos[5]);
 
+    });
+}
+
+function EliminarProducto() {
+    $('.eliminartbtn').on('click', function (e) {
+        e.preventDefault();
+
+        var id = $(this).attr('data-id');
+
+        console.log(id);
+
+        swal.fire({
+            title: 'Estas seguro?',
+            text: "Esta acción no se puede revertir!",
+            type: 'warning',
+            showCancelButton: true,
+            
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: 'POST',
+                    data: {
+                        'id': id,
+                    },
+                    url: "/eliminarProducto",
+                    dataType: 'text',
+                    success: function (data) {
+                        console.log(data);
+                        //var resultado = data;
+                        var resultado = JSON.parse(data);
+                        if (resultado.resultado == 'exito') {
+                            swal.fire(
+                                'Exito',
+                                'Eliminado correctamente ',
+                                'success'
+                            );
+                            jQuery("[data-id='" + resultado.id_eliminado + "'").parents('tr').remove();
+                            /*setTimeout(function () {
+                                window.location.href = '/viewProducto';
+                            }, 600);*/
+
+                        }
+                        if (resultado.resultado == 'error') {
+                            swal.fire(
+                                'Error',
+                                'No se pudo eliminar, intente denuevo',
+                                'error'
+                            )
+                        }
+                    },
+                    error: function (e) {
+                        swal.fire(
+                            'UPS!!!',
+                            'Lo sentimos hubo un error inesperado',
+                            'error'
+                        )
+                    }
+                });
+            }
+        });
     });
 }
 

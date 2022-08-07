@@ -225,7 +225,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 							<a href="#" class="latest-product__item">
@@ -234,7 +234,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 							<a href="#" class="latest-product__item">
@@ -243,7 +243,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 						</div>
@@ -254,7 +254,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 							<a href="#" class="latest-product__item">
@@ -263,7 +263,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 							<a href="#" class="latest-product__item">
@@ -272,7 +272,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 						</div>
@@ -290,7 +290,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 							<a href="#" class="latest-product__item">
@@ -299,7 +299,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 							<a href="#" class="latest-product__item">
@@ -308,7 +308,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 						</div>
@@ -319,7 +319,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 							<a href="#" class="latest-product__item">
@@ -328,7 +328,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 							<a href="#" class="latest-product__item">
@@ -337,7 +337,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 						</div>
@@ -355,7 +355,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 							<a href="#" class="latest-product__item">
@@ -364,7 +364,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 							<a href="#" class="latest-product__item">
@@ -373,7 +373,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 						</div>
@@ -384,7 +384,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 							<a href="#" class="latest-product__item">
@@ -393,7 +393,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 							<a href="#" class="latest-product__item">
@@ -402,7 +402,7 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="latest-product__item__text">
 									<h6>Crab Pool Security</h6>
-									<span>$30.00</span>
+									<span>---</span>
 								</div>
 							</a>
 						</div>

@@ -24,8 +24,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
+                                <h5>+51 991 702 781</h5>
+                                <span>soporte 24/7 </span>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2 style="color: #000000;">Gracias por tu compra</h2>
+                        <h2 style="color: #000000;"> <?php echo $mensaje ?></h2>
                         <div class="breadcrumb__option">
                             <a href="/" style="color: #000000;">seguir comprando </a>
                             <span style="color: #000000;"></span>
