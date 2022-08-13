@@ -97,8 +97,10 @@ class PagoFinalizado
                     'mensaje' => "Error al completar la Compra"
                 ]);
             }
+        }else{
+            header('Location:/');
         }
-        header('Location:/');
+        
 
     }
 }

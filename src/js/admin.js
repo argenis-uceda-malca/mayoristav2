@@ -18,9 +18,11 @@ function iniciarApp() {
     ActualizarCategoriaModal();
     ActualizarCategoria();
     AddCategoria();
+    EliminarCategoria();
     ActualizarMarcaModal();
     AddMarca();
     ActualizarMarca();
+    EliminarMarca();
     //nuevoMostrarDatosUserModal();
     AddColaborador();
     UpdateStado();
@@ -40,7 +42,7 @@ function verificarLogin() {
             url: "/login",
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 var resultado = data;
                 if (resultado.resultado == 'exito') {
                     swal.fire(
@@ -179,7 +181,7 @@ function ActualizarProducto() {
             // no cachear la página al request
             cache: false,
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 var resultado = data;
                 if (resultado.resultado == 'exito') {
                     swal.fire(
@@ -232,7 +234,7 @@ function AddProducto() {
             // no cachear la página al request
             cache: false,
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 var resultado = data;
                 if (resultado.resultado == 'exito') {
                     const Toast = Swal.mixin({
@@ -318,7 +320,7 @@ function EliminarProducto() {
                     url: "/eliminarProducto",
                     dataType: 'text',
                     success: function (data) {
-                        console.log(data);
+                        //console.log(data);
                         //var resultado = data;
                         var resultado = JSON.parse(data);
                         if (resultado.resultado == 'exito') {
@@ -380,7 +382,7 @@ function ActualizarCategoria() {
             url: "/addEditarCategoria",
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 var resultado = data;
                 if (resultado.resultado == 'exito') {
                     swal.fire(
@@ -424,7 +426,7 @@ function AddCategoria() {
             url: "/addEditarCategoria",
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 var resultado = data;
                 if (resultado.resultado == 'exito') {
                     swal.fire(
@@ -463,6 +465,69 @@ function AddCategoria() {
     });
 }
 
+function EliminarCategoria() {
+    $('.eliminartbtnCategoria').on('click', function (e) {
+        e.preventDefault();
+
+        var id = $(this).attr('data-id');
+
+        console.log(id);
+
+        swal.fire({
+            title: 'Estas seguro?',
+            text: "Esta acción no se puede revertir!",
+            type: 'warning',
+            showCancelButton: true,
+            
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: 'POST',
+                    data: {
+                        'id': id,
+                    },
+                    url: "/eliminarCategoria",
+                    dataType: 'text',
+                    success: function (data) {
+                        //console.log(data);
+                        //var resultado = data;
+                        var resultado = JSON.parse(data);
+                        if (resultado.resultado == 'exito') {
+                            swal.fire(
+                                'Exito',
+                                'Eliminado correctamente ',
+                                'success'
+                            );
+                            jQuery("[data-id='" + resultado.id_eliminado + "'").parents('tr').remove();
+                            /*setTimeout(function () {
+                                window.location.href = '/viewProducto';
+                            }, 600);*/
+
+                        }
+                        if (resultado.resultado == 'error') {
+                            swal.fire(
+                                'Error',
+                                'No se pudo eliminar, intente denuevo',
+                                'error'
+                            )
+                        }
+                    },
+                    error: function (e) {
+                        swal.fire(
+                            'UPS!!!',
+                            'Lo sentimos hubo un error inesperado',
+                            'error'
+                        )
+                    }
+                });
+            }
+        });
+    });
+}
+
 function ActualizarColaborador() {
 
     $('#editarColaborador').on('submit', function (e) {
@@ -476,7 +541,7 @@ function ActualizarColaborador() {
             url: "/addEditarColaborador",
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 var resultado = data;
                 if (resultado.resultado == 'exito') {
                     swal.fire(
@@ -534,7 +599,7 @@ function ActualizarMarca() {
             url: "/addEditarMarca",
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 var resultado = data;
                 if (resultado.resultado == 'exito') {
                     swal.fire(
@@ -578,7 +643,7 @@ function AddMarca() {
             url: "/addEditarMarca",
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 var resultado = data;
                 if (resultado.resultado == 'exito') {
                     swal.fire(
@@ -617,6 +682,69 @@ function AddMarca() {
     });
 }
 
+function EliminarMarca() {
+    $('.eliminartbtnMarca').on('click', function (e) {
+        e.preventDefault();
+
+        var id = $(this).attr('data-id');
+
+        //console.log(id);
+
+        swal.fire({
+            title: 'Estas seguro?',
+            text: "Esta acción no se puede revertir!",
+            type: 'warning',
+            showCancelButton: true,
+            
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: 'POST',
+                    data: {
+                        'id': id,
+                    },
+                    url: "/eliminarMarca",
+                    dataType: 'text',
+                    success: function (data) {
+                        //console.log(data);
+                        //var resultado = data;
+                        var resultado = JSON.parse(data);
+                        if (resultado.resultado == 'exito') {
+                            swal.fire(
+                                'Exito',
+                                'Eliminado correctamente ',
+                                'success'
+                            );
+                            jQuery("[data-id='" + resultado.id_eliminado + "'").parents('tr').remove();
+                            /*setTimeout(function () {
+                                window.location.href = '/viewProducto';
+                            }, 600);*/
+
+                        }
+                        if (resultado.resultado == 'error') {
+                            swal.fire(
+                                'Error',
+                                'No se pudo eliminar, intente denuevo',
+                                'error'
+                            )
+                        }
+                    },
+                    error: function (e) {
+                        swal.fire(
+                            'UPS!!!',
+                            'Lo sentimos hubo un error inesperado',
+                            'error'
+                        )
+                    }
+                });
+            }
+        });
+    });
+}
+
 function AddColaborador() {
     $('#addColaborador').on('submit', function (e) {
         e.preventDefault();
@@ -629,7 +757,7 @@ function AddColaborador() {
             url: "/crear-usuario",
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 var resultado = data;
                 if (resultado.resultado == 'exito') {
                     swal.fire(
@@ -702,7 +830,7 @@ function nuevoMostrarDatosUserModal() {
             url: "/getInfoUser",
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 var resultado = data;
 
             },
@@ -729,7 +857,7 @@ function getUsuario() {
             url: "/cuenta",
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 var resultado = data;
                 if (resultado.resultado == 'exito') {
                     swal.fire(
@@ -781,7 +909,7 @@ function report() {
             url: "/report",
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 var resultado = data;
             },
             error: function (e) {
@@ -818,7 +946,7 @@ function UpdateStado() {
             url: "/updateEstado",
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 var resultado = data;
                 if (resultado.resultado == 'exito') {
                     const Toast = Swal.mixin({

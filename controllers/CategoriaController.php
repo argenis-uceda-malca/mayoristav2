@@ -47,5 +47,22 @@ class CategoriaController
         die(json_encode($respuesta));
     }
 
-    
+    public static function eliminarCategoria(){
+        session_start();
+        isAuth();
+        
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = $_POST['id'];
+            $producto = Categorias::find($id);
+            $producto->eliminar();
+            $respuesta = array(
+                'resultado' => 'exito',
+                'id_eliminado' => $id,
+                'id' => $id
+            );
+
+        }
+        die(json_encode($respuesta));
+    }
+
 }

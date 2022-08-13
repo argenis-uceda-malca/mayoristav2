@@ -51,11 +51,14 @@ $router->post('/eliminarProducto', [ProductoController::class, 'eliminarProducto
 
 $router->get('/viewColaborador', [ColaboradoresController::class, 'ViewColaboradores']);
 $router->post('/addEditarColaborador', [ColaboradoresController::class, 'addEditarColaborador']);
-$router->get('/viewCategorias', [CategoriaController::class, 'viewCategoria']);
 
+$router->get('/viewCategorias', [CategoriaController::class, 'viewCategoria']);
 $router->post('/addEditarCategoria', [CategoriaController::class, 'addEditarCategoria']);
+$router->post('/eliminarCategoria', [CategoriaController::class, 'eliminarCategoria']);
+
 $router->get('/viewMarcas', [MarcaController::class, 'viewMarca']);
 $router->post('/addEditarMarca', [MarcaController::class, 'addEditarMarca']);
+$router->post('/eliminarMarca', [MarcaController::class, 'eliminarMarca']);
 
 //$router->post('/addColaborador', [ColaboradoresController::class, 'addColaborador']);
 $router->post('/getInfoUser', [ColaboradoresController::class, 'getInfoUser']);

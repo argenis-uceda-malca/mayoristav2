@@ -48,5 +48,22 @@ class MarcaController
         die(json_encode($respuesta));
     }
 
+    public static function eliminarMarca(){
+        session_start();
+        isAuth();
+        
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = $_POST['id'];
+            $producto = Marcas::find($id);
+            $producto->eliminar();
+            $respuesta = array(
+                'resultado' => 'exito',
+                'id_eliminado' => $id,
+                'id' => $id
+            );
+
+        }
+        die(json_encode($respuesta));
+    }
     
 }

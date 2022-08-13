@@ -56,7 +56,7 @@
                                     <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
                                     <h1 class="display-1">404</h1>
                                     <h1 class="mb-4">Página no encontrada</h1>
-                                    <p class="mb-4">¡Lo sentimos, la página que has buscado no existe en nuestro sitio web! ¿Quizás ir a nuestra página de inicio o intentar usar una búsqueda?</p>
+                                    <p class="mb-4">¡Lo sentimos, la página que has buscado no existe en nuestro sitio web! </p>
                                     <a class="primary-btn" href="/">Vuelve al inicio</a>
                                 </div>
                             </div>

@@ -65,7 +65,7 @@ include_once __DIR__ . '/../../templates/administrador/sidebar.php';
                                                 <button type="button" class="btn waves-effect waves-light btn-rounded btn-outline-secondary editbtnMarca" data-toggle="modal" data-target="#myModalMarca"><i class="fa fa-edit"></i></button>
                                             </td>
                                             <td class="border-top-0 text-center px-2 py-4">
-                                                <a href="#" type="button" class="btn waves-effect waves-light btn-rounded btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                                <button type="button" class="btn waves-effect waves-light btn-rounded btn-outline-danger eliminartbtnMarca" data-id="<?php echo $marca->id; ?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                             </td>
 
                                         </tr>

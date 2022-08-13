@@ -121,12 +121,7 @@ include_once __DIR__ . '/../templates/header.php';
 											<a><i class="fa fa-heart"></i></a>
 										</li>
 										<li>
-											<div class="boton-modal " 
-												data-target="<?php echo $producto->nombre; ?>" 
-												data-img="/build/img/imgProducto/<?php echo $producto->imagen; ?>" 
-												data-categoria="<?php echo $categoria->nombre ?>"
-												data-precio="<?php echo $producto->precio; ?>"
-												>
+											<div class="boton-modal " data-target="<?php echo $producto->nombre; ?>" data-img="/build/img/imgProducto/<?php echo $producto->imagen; ?>" data-categoria="<?php echo $categoria->nombre ?>" data-precio="<?php echo $producto->precio; ?>">
 												<label for="btn-modal">
 													<a><i class="fa fa-retweet"></i></a>
 												</label>
@@ -159,7 +154,7 @@ include_once __DIR__ . '/../templates/header.php';
 <div class="container-modal">
 	<div class="content-modal">
 		<div class="row">
-			<div class="col-lg-6 col-md-6 col-sm-6" >
+			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="product__details__pic">
 					<div class="product__details__pic__item">
 						<img class="product__details__pic__item--large" id="modal_img_producto" src="" alt="" style="max-width: 270px; max-height: 270px;">
@@ -178,10 +173,10 @@ include_once __DIR__ . '/../templates/header.php';
 						<i class="fa fa-star-half-o"></i>
 					</div>
 					<div class="product__details__price" id="modal_precio_producto"><?php echo $producto->precio; ?></div>
-					<p id="modal_descripcion_producto">DEscripcion del producto</p>
+					<p id="modal_descripcion_producto">Compre Ahora </p>
 				</div>
 			</div>
-	
+
 		</div>
 	</div>
 	<label for="btn-modal" class="cerrar-modal"></label>
@@ -216,195 +211,141 @@ include_once __DIR__ . '/../templates/header.php';
 		<div class="row">
 			<div class="col-lg-4 col-md-6">
 				<div class="latest-product__text">
-					<h4>Latest Products</h4>
+					<h4>Más Vendidos</h4>
 					<div class="latest-product__slider owl-carousel">
 						<div class="latest-prdouct__slider__item">
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-1.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-2.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-3.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
+							<?php
+							$i = 0;
+							foreach (($topProductos) as $topProducto) {
+								if ($i < 3) {
+							?>
+									<a href="#" class="latest-product__item">
+										<div class="latest-product__item__pic">
+											<img src="/build/img/imgProducto/<?php echo $topProducto->imagen; ?>" alt="producto">
+										</div>
+										<div class="latest-product__item__text">
+											<h6><?php echo $topProducto->nombre ?></h6>
+											<span>S/. <?php echo $topProducto->precio ?></span>
+										</div>
+									</a>
+							<?php
+									$i = $i + 1;
+								}
+							} ?>
 						</div>
 						<div class="latest-prdouct__slider__item">
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-1.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-2.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-3.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
+							<?php
+							$i = 0;
+							foreach (array_reverse($topProductos) as $topProducto) {
+								if ($i < 3) {
+							?>
+									<a href="#" class="latest-product__item">
+										<div class="latest-product__item__pic">
+											<img src="/build/img/imgProducto/<?php echo $topProducto->imagen; ?>" alt="producto">
+										</div>
+										<div class="latest-product__item__text">
+											<h6><?php echo $topProducto->nombre ?></h6>
+											<span>S/. <?php echo $topProducto->precio ?></span>
+										</div>
+									</a>
+							<?php
+									$i = $i + 1;
+								}
+							} ?>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-6">
 				<div class="latest-product__text">
-					<h4>Top Rated Products</h4>
+					<h4>Menores Precios</h4>
 					<div class="latest-product__slider owl-carousel">
 						<div class="latest-prdouct__slider__item">
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-1.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-2.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-3.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
+							<?php
+							$i = 0;
+							foreach (($productoMenos) as $proMenos) {
+								if ($i < 3) {
+							?>
+									<a href="#" class="latest-product__item">
+										<div class="latest-product__item__pic">
+											<img src="/build/img/imgProducto/<?php echo $proMenos->imagen; ?>" alt="">
+										</div>
+										<div class="latest-product__item__text">
+											<h6><?php echo $proMenos->nombre ?></h6>
+											<span>S/. <?php echo $proMenos->precio ?></span>
+										</div>
+									</a>
+							<?php
+									$i = $i + 1;
+								}
+							} ?>
 						</div>
 						<div class="latest-prdouct__slider__item">
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-1.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-2.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-3.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
+							<?php
+							$i = 0;
+							foreach (array_reverse($productoMenos) as $proMenos) {
+								if ($i < 3) {
+							?>
+									<a href="#" class="latest-product__item">
+										<div class="latest-product__item__pic">
+											<img src="/build/img/imgProducto/<?php echo $proMenos->imagen; ?>" alt="">
+										</div>
+										<div class="latest-product__item__text">
+											<h6><?php echo $proMenos->nombre ?></h6>
+											<span>S/. <?php echo $proMenos->precio ?></span>
+										</div>
+									</a>
+							<?php
+									$i = $i + 1;
+								}
+							} ?>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-6">
 				<div class="latest-product__text">
-					<h4>Review Products</h4>
+					<h4>Mayores Precios</h4>
 					<div class="latest-product__slider owl-carousel">
 						<div class="latest-prdouct__slider__item">
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-1.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-2.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-3.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
+							<?php
+							$i = 0;
+							foreach (($productoMas) as $proMas) {
+								if ($i < 3) {
+							?>
+									<a href="#" class="latest-product__item">
+										<div class="latest-product__item__pic">
+											<img src="/build/img/imgProducto/<?php echo $proMas->imagen; ?>" alt="">
+										</div>
+										<div class="latest-product__item__text">
+											<h6><?php echo $proMas->nombre ?></h6>
+											<span>S/. <?php echo $proMas->precio ?></span>
+										</div>
+									</a>
+							<?php
+									$i = $i + 1;
+								}
+							} ?>
 						</div>
 						<div class="latest-prdouct__slider__item">
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-1.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-2.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
-							<a href="#" class="latest-product__item">
-								<div class="latest-product__item__pic">
-									<img src="/build/img/latest-product/lp-3.jpg" alt="">
-								</div>
-								<div class="latest-product__item__text">
-									<h6>Crab Pool Security</h6>
-									<span>---</span>
-								</div>
-							</a>
+							<?php
+							$i = 0;
+							foreach (array_reverse($productoMas) as $proMas) {
+								if ($i < 3) {
+							?>
+									<a href="#" class="latest-product__item">
+										<div class="latest-product__item__pic">
+											<img src="/build/img/imgProducto/<?php echo $proMas->imagen; ?>" alt="">
+										</div>
+										<div class="latest-product__item__text">
+											<h6><?php echo $proMas->nombre ?></h6>
+											<span>S/. <?php echo $proMas->precio ?></span>
+										</div>
+									</a>
+							<?php
+									$i = $i + 1;
+								}
+							} ?>
 						</div>
 					</div>
 				</div>
