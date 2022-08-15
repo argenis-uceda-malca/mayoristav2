@@ -134,7 +134,8 @@ include_once __DIR__ . '/../templates/header.php';
 								</div>
 								<div class="featured__item__text">
 									<h6><a href="/cart?id=<?php echo $producto->id; ?>"><?php echo $producto->nombre; ?></a></h6>
-									<h5>S/. <?php echo $producto->precio; ?></h5>
+									<h6 style="color: red;"><strike>S/ <?php echo $producto->precio + ($producto->precio) * 0.10; ?></strike></h6>
+									<h5>S/ <?php echo $producto->precio; ?></h5>
 								</div>
 							</div>
 						</div>
@@ -172,8 +173,9 @@ include_once __DIR__ . '/../templates/header.php';
 						<i class="fa fa-star"></i>
 						<i class="fa fa-star-half-o"></i>
 					</div>
+					<div class="product__details__price" id="modal_precio_producto_antes" style="color: #ac9393; font-size: 17px; text-decoration: line-through;"></div>
 					<div class="product__details__price" id="modal_precio_producto"><?php echo $producto->precio; ?></div>
-					<p id="modal_descripcion_producto">Compre Ahora </p>
+					
 				</div>
 			</div>
 
@@ -225,7 +227,7 @@ include_once __DIR__ . '/../templates/header.php';
 										</div>
 										<div class="latest-product__item__text">
 											<h6><?php echo $topProducto->nombre ?></h6>
-											<span>S/. <?php echo $topProducto->precio ?></span>
+											<span>S/ <?php echo $topProducto->precio ?></span>
 										</div>
 									</a>
 							<?php
@@ -245,7 +247,7 @@ include_once __DIR__ . '/../templates/header.php';
 										</div>
 										<div class="latest-product__item__text">
 											<h6><?php echo $topProducto->nombre ?></h6>
-											<span>S/. <?php echo $topProducto->precio ?></span>
+											<span>S/ <?php echo $topProducto->precio ?></span>
 										</div>
 									</a>
 							<?php
@@ -272,7 +274,7 @@ include_once __DIR__ . '/../templates/header.php';
 										</div>
 										<div class="latest-product__item__text">
 											<h6><?php echo $proMenos->nombre ?></h6>
-											<span>S/. <?php echo $proMenos->precio ?></span>
+											<span>S/ <?php echo $proMenos->precio ?></span>
 										</div>
 									</a>
 							<?php
@@ -292,7 +294,7 @@ include_once __DIR__ . '/../templates/header.php';
 										</div>
 										<div class="latest-product__item__text">
 											<h6><?php echo $proMenos->nombre ?></h6>
-											<span>S/. <?php echo $proMenos->precio ?></span>
+											<span>S/ <?php echo $proMenos->precio ?></span>
 										</div>
 									</a>
 							<?php
@@ -319,7 +321,7 @@ include_once __DIR__ . '/../templates/header.php';
 										</div>
 										<div class="latest-product__item__text">
 											<h6><?php echo $proMas->nombre ?></h6>
-											<span>S/. <?php echo $proMas->precio ?></span>
+											<span>S/ <?php echo $proMas->precio ?></span>
 										</div>
 									</a>
 							<?php
@@ -339,7 +341,7 @@ include_once __DIR__ . '/../templates/header.php';
 										</div>
 										<div class="latest-product__item__text">
 											<h6><?php echo $proMas->nombre ?></h6>
-											<span>S/. <?php echo $proMas->precio ?></span>
+											<span>S/ <?php echo $proMas->precio ?></span>
 										</div>
 									</a>
 							<?php

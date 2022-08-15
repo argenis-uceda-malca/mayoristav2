@@ -13,11 +13,14 @@ for ($i = 0; $i < count($arregloCarrito); $i++) {
 ?>
 
 <?php
+
+//debuguear($_ENV['SDK_MP']);
+
 // SDK de Mercado Pago
 require __DIR__ .  '../../../../vendor/autoload.php';
 // Agrega credenciales
 //MercadoPago\SDK::setAccessToken('TEST-2658067067371995-091118-9a053d5a9a56767ce675849f6d870beb-194231546');
-MercadoPago\SDK::setAccessToken('APP_USR-7012405370879454-080700-344b63422b70931bd494dd5d580f3f04-1174727618');
+MercadoPago\SDK::setAccessToken($_ENV['setAccessToken']);
 
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();

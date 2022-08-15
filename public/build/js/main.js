@@ -204,7 +204,9 @@
         $('#modal_nombre_producto').text(nombre);
         $('#modal_img_producto').attr("src", img);
         $('#modal_categoria_producto').text('Categotia: '+categoria);
-        $('#modal_precio_producto').text('S/. '+precio);
+        $('#modal_precio_producto').text('S/ '+ precio);
+        var precioAntiguo = Number.parseFloat(precio)
+        $('#modal_precio_producto_antes').text('S/ '+ (precioAntiguo+precioAntiguo*0.1).toFixed(2));
     });
 
 })(jQuery);

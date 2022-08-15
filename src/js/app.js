@@ -30,7 +30,7 @@ function iniciarApp() {
     Verificarcheckbox();
     VerificarcheckboxDelivery();
     confirmarCheckup();
-    
+
     //consultarAPI(); // Consulta la API en el backend de PHP
 
     //idCliente();
@@ -208,9 +208,9 @@ function cambiarCantidad() {
         if ($button.hasClass('inc')) {
             incrementar(cantidad, precio, id, 1);
         } else {
-            if(estado==false){
-                if(cantidad==0){
-                    estado=true;
+            if (estado == false) {
+                if (cantidad == 0) {
+                    estado = true;
                 }
                 incrementar(cantidad, precio, id, 2);
             }
@@ -282,18 +282,34 @@ function Verificarcheckbox() {
 }
 
 function VerificarcheckboxDelivery() {
+    var total = parseFloat($("#granTotal").val());
+    //alert(total);
+
     $('#payment').click(function () {
         var miCheckbox = $(this);
+        //alert("asd");
 
-        if (miCheckbox.prop('checked')) {
+        if (total < 60) {
+            $("#payment").prop("checked", false);
+            $(this).prop('value', '0');
+        } else {
+            if (miCheckbox.prop('checked')) {
+                $(this).prop('value', '1');
+            } else {
+                $(this).prop('value', '0');
+            }
+        }
+
+
+        /*if (miCheckbox.prop('checked')) {
             $(this).prop('value', '1');
         } else {
             $(this).prop('value', '0');
-        }
+        }*/
     });
 }
 
-function confirmarCheckup(){
+function confirmarCheckup() {
     $('#crearVenta').on('submit', function (e) {
         e.preventDefault();
         //alert("hola");
@@ -318,10 +334,10 @@ function confirmarCheckup(){
                     }, 5000);
 
                 }
-                if (resultado.resultado == 'resumen') {      
+                if (resultado.resultado == 'resumen') {
                     window.location.href = '/resumen?id=' + resultado.id;
                 }
-                if (resultado.resultado == 'resumen2'){
+                if (resultado.resultado == 'resumen2') {
                     window.location.href = '/resumen2?id=' + resultado.id;
                     //console.log(resultado.busqueda);
                 }
@@ -711,18 +727,19 @@ async function reservarCita() {
 
 function VerificarCantidad() {
     var total_col = 0;
-    
+
     //Recorro todos los tr ubicados en el tbody
     $('#ejemplo').find('tr').each(function (i, el) {
 
         //Voy incrementando las variables segun la fila ( .eq(0) representa la fila 1 )     
         total_col += parseFloat($(this).find('td').eq(4).text());
-        
+
     });
     //Muestro el resultado en el th correspondiente a la columna
-    
+
     console.log(total_col);
 
 
 }
+
 
