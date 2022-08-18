@@ -292,7 +292,11 @@ class CartController
         die(json_encode($respuesta));
       }
     }
-
+    if(isset($_POST['delivery'])){
+      $delivery = $_POST['delivery'];
+    }else{
+      $delivery = 0;
+    }
     //primero agregar al clientes y almacenarlo en una sessión 
     //segundo, enviar el id del cliente hacia el ajax a travez de "respuesta"
 
@@ -310,6 +314,8 @@ class CartController
     $arreglo2[]= array(
       'direccion'=>s($_POST['direccion']),
       'referencias'=>s($_POST['referencias']),
+      'distrito'=>s($_POST['distrito']),
+      'delivery'=>($delivery),
     );
     $_SESSION['venta'] = $arreglo2;
 

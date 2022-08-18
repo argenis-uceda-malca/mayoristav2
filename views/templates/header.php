@@ -117,7 +117,7 @@
                 </div>
             </div>
         </div>
-        <div class="row hero__item set-bg" style="height: 900px; align-content: flex-start" data-setbg="/build/img/hero/carousel-1.png">
+        <div class="row hero__item set-bg" style="background-size: contain; height: 900px; align-content: flex-start" data-setbg="/build/img/hero/banner_productos.png">
             <div class="container" style="padding-bottom: 0; margin-bottom: 0; max-height: 200px; ">
                 <div class="row">
                     <div class="col-lg-3">
@@ -148,7 +148,7 @@
                         <div class="header__cart">
                             <ul>
                                 <li><a href="#"><i class="fa fa-heart"></i> <span></span></a></li>
-                                <li><a href="/cart"><i class="fa fa-shopping-bag"></i> <span>
+                                <li style="background-color: #ffffff; padding: 2px; border-radius: 50%; padding-right: 5px; padding-left: 5px;"><a href="/cart"><i class="fa fa-shopping-bag"></i> <span>
                                             <?php
                                             if (isset($_SESSION['carrito'])) {
                                                 echo count($_SESSION['carrito']);

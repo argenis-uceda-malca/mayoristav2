@@ -284,6 +284,7 @@ function Verificarcheckbox() {
 function VerificarcheckboxDelivery() {
     var total = parseFloat($("#granTotal").val());
     //alert(total);
+    //$('#payment').prop('value', '0');
 
     $('#payment').click(function () {
         var miCheckbox = $(this);
@@ -295,8 +296,10 @@ function VerificarcheckboxDelivery() {
         } else {
             if (miCheckbox.prop('checked')) {
                 $(this).prop('value', '1');
+                //alert("valor 1");
             } else {
-                $(this).prop('value', '0');
+                $(this).prop('value', '12');
+                //alert("valor 0");
             }
         }
 

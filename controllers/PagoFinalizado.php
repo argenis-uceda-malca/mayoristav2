@@ -43,12 +43,14 @@ class PagoFinalizado
                     for ($i = 0; $i < count($arregloVenta); $i++) {
                         $direccion =  $arregloVenta[$i]['direccion'];
                         $referencias =  $arregloVenta[$i]['referencias'];
+                        $delivery =  $arregloVenta[$i]['delivery'];
                     }
     
                     $args = [
                         'dni' => $dni,
                         'direccion' => $direccion,
                         'referencias' => $referencias,
+                        'delivery' => $delivery,
                     ];
     
     
@@ -74,7 +76,7 @@ class PagoFinalizado
                         $args = [
                             'ventaId' => $resultado['id'],
                             'id_producto' => $producto['id'],
-                            'total' => $producto['precio'],
+                            'total' => $producto['precio']*$producto['cantidad'],
                             'cantidad' => $producto['cantidad'],
                             'id_usuario' => $id_usuario
                         ];

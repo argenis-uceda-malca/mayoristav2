@@ -8,7 +8,7 @@ include_once __DIR__ . '/../templates/header.php';
 		<div class="row ">
 			<div class="col-lg-12">
 				<div class="hero__search container">
-					<div class="hero__search__form">
+					<!--<div class="hero__search__form">
 						<form action="#">
 							<div class="hero__search__categories">
 								Categorias
@@ -17,7 +17,7 @@ include_once __DIR__ . '/../templates/header.php';
 							<input type="text" placeholder="Qué necesitas?">
 							<button type="submit" class="site-btn">BUSCAR</button>
 						</form>
-					</div>
+					</div>-->
 					<div class="hero__search__phone">
 						<div class="hero__search__phone__icon">
 							<i class="fa fa-phone"></i>
@@ -51,29 +51,34 @@ include_once __DIR__ . '/../templates/header.php';
 	<div class="container">
 		<div class="row">
 			<div class="categories__slider owl-carousel">
-				<div class="col-lg-3">
-					<div class="categories__item set-bg" data-setbg="/build/img/categories/cat-1.jpg">
-						<h5><a>Fresh Fruit</a></h5>
+				<div class="col-lg-3" style="border-radius: 10px ;">
+					<div class="categories__item set-bg zoom" style="border-radius:10px;" data-setbg="/build/img/categoriasProduc/atun.jpg">
+						<h5><a style="border-radius:10px">Conservas</a></h5>
 					</div>
 				</div>
-				<div class="col-lg-3">
-					<div class="categories__item set-bg" data-setbg="/build/img/categories/cat-2.jpg">
-						<h5><a>Dried Fruit</a></h5>
+				<div class="col-lg-3" style="border-radius:10px;">
+					<div class="categories__item set-bg zoom" style="border-radius:10px;" data-setbg="/build/img/categoriasProduc/bioaloe.jpg">
+						<h5><a style="border-radius:10px">Bio aloe</a></h5>
 					</div>
 				</div>
-				<div class="col-lg-3">
-					<div class="categories__item set-bg" data-setbg="/build/img/categories/cat-3.jpg">
-						<h5><a>Vegetables</a></h5>
+				<div class="col-lg-3" style="border-radius:10px;">
+					<div class="categories__item set-bg zoom" style="border-radius:10px;" data-setbg="/build/img/categoriasProduc/cocacola.jpg">
+						<h5><a style="border-radius:10px">Cocacola</a></h5>
 					</div>
 				</div>
-				<div class="col-lg-3">
-					<div class="categories__item set-bg" data-setbg="/build/img/categories/cat-4.jpg">
-						<h5><a>drink fruits</a></h5>
+				<div class="col-lg-3" style="border-radius:10px;">
+					<div class="categories__item set-bg zoom" style="border-radius:10px;" data-setbg="/build/img/categoriasProduc/fanta.jpg">
+						<h5><a style="border-radius:10px">Fanta</a></h5>
 					</div>
 				</div>
-				<div class="col-lg-3">
-					<div class="categories__item set-bg" data-setbg="/build/img/categories/cat-5.jpg">
-						<h5><a>drink fruits</a></h5>
+				<div class="col-lg-3" style="border-radius:10px;">
+					<div class="categories__item set-bg zoom" style="border-radius:10px;" data-setbg="/build/img/categoriasProduc/faraon.jpg">
+						<h5><a style="border-radius:10px">Faraon</a></h5>
+					</div>
+				</div>
+				<div class="col-lg-3" style="border-radius:10px;">
+					<div class="categories__item set-bg zoom" style="border-radius:10px;" data-setbg="/build/img/categoriasProduc/gatore.jpg">
+						<h5><a style="border-radius:10px">Gatore</a></h5>
 					</div>
 				</div>
 			</div>
@@ -158,7 +163,7 @@ include_once __DIR__ . '/../templates/header.php';
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="product__details__pic">
 					<div class="product__details__pic__item">
-						<img class="product__details__pic__item--large" id="modal_img_producto" src="" alt="" style="max-width: 270px; max-height: 270px;">
+						<img class="product__details__pic__item--large zoomx3" id="modal_img_producto" src="" alt="" style="max-width: 270px; max-height: 270px;">
 					</div>
 				</div>
 			</div>
@@ -194,12 +199,12 @@ include_once __DIR__ . '/../templates/header.php';
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="banner__pic">
-					<img src="/build/img/banner/banner-1.jpg" alt="">
+					<img class="zoom" src="/build/img/banner/costeno.png" alt="" style="border-radius: 10px">
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="banner__pic">
-					<img src="/build/img/banner/banner-2.jpg" alt="">
+					<img class="zoom" src="/build/img/banner/costeno2.png" alt="" style="border-radius: 10px">
 				</div>
 			</div>
 		</div>

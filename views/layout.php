@@ -28,7 +28,8 @@
 	<link rel="stylesheet" href="/build/css/owl.carousel.min.css" type="text/css">
 	<link rel="stylesheet" href="/build/css/slicknav.min.css" type="text/css">
 	<link rel="stylesheet" href="/build/css/style.css" type="text/css">
-
+	<!-- Icons de pag Nosotros-->
+	<link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
 
 	<link href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css" rel="stylesheet">
 </head>

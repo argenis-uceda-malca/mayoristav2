@@ -10,6 +10,7 @@ $arregloCarrito = $_SESSION['carrito'];
 for ($i = 0; $i < count($arregloCarrito); $i++) {
     $total = $total + ($arregloCarrito[$i]['precio'] * $arregloCarrito[$i]['cantidad']);
 }
+
 ?>
 
 <?php
@@ -25,6 +26,20 @@ MercadoPago\SDK::setAccessToken($_ENV['setAccessToken']);
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
 
+//debuguear($_SESSION['venta']);
+$distritio = $_SESSION['venta'][0]['distrito'];
+$delivery = $_SESSION['venta'][0]['delivery'];
+if( $distritio == 1 && $delivery == 1){
+    /*$shipments = new MercadoPago\Shipments();
+    $shipments->cost = 8;
+    $preference->shipments = $shipments;*/
+
+    //Aumento el total
+    $total = $total + 8; 
+    
+}
+
+
 $preference->back_urls = array(
     "success" => "http://localhost:8080/pagoFin",
     "failure" => "http://localhost/",
@@ -37,7 +52,7 @@ $preference->back_urls = array(
 // Crea un ítem en la preferencia
 $item = new MercadoPago\Item();
 $item->id = '0001';
-$item->title = 'Mi Pedido';
+$item->title = 'Tu Pedido';
 $item->quantity = 1;
 $item->currency_id = "PEN";
 $item->unit_price = $total;
@@ -72,10 +87,10 @@ $preference->save();
                         <h4>Tu pedido</h4>
                         <div class="blog__sidebar__recent">
                             <?php
-                            $total = 0;
+                            //$total = 0;
                             $arregloCarrito = $_SESSION['carrito'];
                             for ($i = 0; $i < count($arregloCarrito); $i++) {
-                                $total = $total + ($arregloCarrito[$i]['precio'] * $arregloCarrito[$i]['cantidad']);
+                                //$total = $total + ($arregloCarrito[$i]['precio'] * $arregloCarrito[$i]['cantidad']);
                             ?>
                                 <div class="blog__sidebar__recent__item">
                                     <div class="blog__sidebar__recent__item__pic">
@@ -103,7 +118,7 @@ $preference->save();
                         <i class="fa fa-star-half-o"></i>
                         <span></span>
                     </div>
-                    <div class="product__details__price">S/. <?php echo $total; ?></div>
+                    <div class="product__details__price">S/ <?php echo $total; ?></div>
                     <p> estas a un paso de completar tu compra, verifica que los datos de tu compra sean
                         correctos </p>
 
