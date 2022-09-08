@@ -200,13 +200,15 @@
         var img = e.currentTarget.getAttribute("data-img");
         var categoria = e.currentTarget.getAttribute("data-categoria");
         var precio = e.currentTarget.getAttribute("data-precio");
+        var addCard = e.currentTarget.getAttribute("data-id");
 
         $('#modal_nombre_producto').text(nombre);
         $('#modal_img_producto').attr("src", img);
         $('#modal_categoria_producto').text('Categotia: '+categoria);
-        $('#modal_precio_producto').text('S/ '+ precio);
+        $('#modal_precio_producto').text('Ahora: S/ '+ precio);
         var precioAntiguo = Number.parseFloat(precio)
-        $('#modal_precio_producto_antes').text('S/ '+ (precioAntiguo+precioAntiguo*0.1).toFixed(2));
+        $('#modal_precio_producto_antes').text('Regular: S/ '+ (precioAntiguo+precioAntiguo*0.1).toFixed(2));
+        $('#addCard').attr("href", '/cart?id='+addCard);
     });
 
 })(jQuery);

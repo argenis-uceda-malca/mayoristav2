@@ -117,7 +117,8 @@ class CartController
           'nombre' => $arreglo[$i]['nombre'],
           'precio' => $arreglo[$i]['precio'],
           'idcategoria' => $arreglo[$i]['idcategoria'],
-          'cantidad' => $arreglo[$i]['cantidad']
+          'cantidad' => $arreglo[$i]['cantidad'],
+          'imagen' => $arreglo[$i]['imagen']
         );
       }
     }

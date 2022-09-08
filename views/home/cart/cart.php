@@ -36,7 +36,7 @@
   <!-- Hero Section End -->
 
   <!-- Breadcrumb Section Begin -->
-  <section class="breadcrumb-section set-bg" style="background-position: bottom center;" data-setbg="/build/img/hero/carousel-1.png">
+  <section class="breadcrumb-section set-bg" style="background-position: bottom center; background-size: cover;" data-setbg="/build/img/hero/carousel-1.png">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">

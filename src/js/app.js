@@ -219,9 +219,10 @@ function cambiarCantidad() {
 }
 
 function incrementar(cantidad, precio, id, operacion) {
+
     var inicio = $(".cant" + id).text();
     var mul = parseFloat(cantidad) * parseFloat(precio);
-    $(".cant" + id).text(mul);
+    $(".cant" + id).text(mul.toFixed(2));
 
     if (operacion == 3) {
         var resultado = parseInt(mul) - parseInt(inicio);
@@ -264,8 +265,8 @@ function actualizarTotal(mul, operacion) {
     } else {
         var totalNuevo = total + mul;
     }
-    $("#totalCarrito").text(totalNuevo);
-    $(".totalCarrito").text(totalNuevo);
+    $("#totalCarrito").text(totalNuevo.toFixed(2));
+    $(".totalCarrito").text(totalNuevo.toFixed(2));
 
 }
 

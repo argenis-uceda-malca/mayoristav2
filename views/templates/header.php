@@ -27,7 +27,7 @@
             <div class="header__cart__price"><span>Carrito</span></div>
         </div>
         <div class="humberger__menu__widget">
-            <div class="header__top__right__language">
+            <!--<div class="header__top__right__language">
                 <img src="/build/img/language.png" alt="">
                 <div>English</div>
                 <span class="arrow_carrot-down"></span>
@@ -35,7 +35,7 @@
                     <li><a href="#">Spanis</a></li>
                     <li><a href="#">English</a></li>
                 </ul>
-            </div>
+            </div>-->
             <div class="header__top__right__auth">
                 <a href="/login"><i class="fa fa-user"></i> Login</a>
             </div>
@@ -100,7 +100,7 @@
                                 <a href="/https://www.facebook.com/HIN-Inversiones-106561198751645" target="_blank"><i class="fa fa-facebook"></i></a>
                                 <a href="https://www.instagram.com/hin_inversiones2022/" target="_blank"><i class="fa fa-instagram"></i></a>
                             </div>
-                            <div class="header__top__right__language">
+                            <!--<div class="header__top__right__language">
                                 <img src="/build/img/language.png" alt="">
                                 <div>English</div>
                                 <span class="arrow_carrot-down"></span>
@@ -108,7 +108,7 @@
                                     <li><a href="#">Spanis</a></li>
                                     <li><a href="#">English</a></li>
                                 </ul>
-                            </div>
+                            </div>-->
                             <div class="header__top__right__auth">
                                 <a href="/login"><i class="fa fa-user"></i> Login</a>
                             </div>
@@ -117,7 +117,7 @@
                 </div>
             </div>
         </div>
-        <div class="row hero__item set-bg" style="background-size: contain; height: 900px; align-content: flex-start" data-setbg="/build/img/hero/banner_productos.png">
+        <div class="row hero__item set-bg" style=" height: 700px; align-content: flex-start" data-setbg="/build/img/hero/banner_productos.png">
             <div class="container" style="padding-bottom: 0; margin-bottom: 0; max-height: 200px; ">
                 <div class="row">
                     <div class="col-lg-3">

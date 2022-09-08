@@ -30,9 +30,9 @@ include_once __DIR__ . '/../templates/header.php';
 				</div>
 				<div class="">
 					<div class="hero__text">
-						<span>FRUTA FRESCA</span>
-						<h2>Vegetable <br />100% Orgánico</h2>
-						<p>Free Pickup and Delivery Available</p>
+						<span>MAYORISTA</span>
+						<h2>Productos <br />100% de Calidad</h2>
+						<p>Envios a delivery gratis</p>
 						<a href="#" class="primary-btn">Compra ahora</a>
 					</div>
 				</div>
@@ -52,32 +52,32 @@ include_once __DIR__ . '/../templates/header.php';
 		<div class="row">
 			<div class="categories__slider owl-carousel">
 				<div class="col-lg-3" style="border-radius: 10px ;">
-					<div class="categories__item set-bg zoom" style="border-radius:10px;" data-setbg="/build/img/categoriasProduc/atun.jpg">
+					<div class="categories__item set-bg zoom" style="border-radius:10px; background-size: cover;" data-setbg="/build/img/categoriasProduc/atun.jpg">
 						<h5><a style="border-radius:10px">Conservas</a></h5>
 					</div>
 				</div>
 				<div class="col-lg-3" style="border-radius:10px;">
-					<div class="categories__item set-bg zoom" style="border-radius:10px;" data-setbg="/build/img/categoriasProduc/bioaloe.jpg">
+					<div class="categories__item set-bg zoom" style="border-radius:10px; background-size: cover;" data-setbg="/build/img/categoriasProduc/bioaloe.jpg">
 						<h5><a style="border-radius:10px">Bio aloe</a></h5>
 					</div>
 				</div>
 				<div class="col-lg-3" style="border-radius:10px;">
-					<div class="categories__item set-bg zoom" style="border-radius:10px;" data-setbg="/build/img/categoriasProduc/cocacola.jpg">
+					<div class="categories__item set-bg zoom" style="border-radius:10px; background-size: cover;" data-setbg="/build/img/categoriasProduc/cocacola.jpg">
 						<h5><a style="border-radius:10px">Cocacola</a></h5>
 					</div>
 				</div>
 				<div class="col-lg-3" style="border-radius:10px;">
-					<div class="categories__item set-bg zoom" style="border-radius:10px;" data-setbg="/build/img/categoriasProduc/fanta.jpg">
+					<div class="categories__item set-bg zoom" style="border-radius:10px; background-size: cover;" data-setbg="/build/img/categoriasProduc/fanta.jpg">
 						<h5><a style="border-radius:10px">Fanta</a></h5>
 					</div>
 				</div>
 				<div class="col-lg-3" style="border-radius:10px;">
-					<div class="categories__item set-bg zoom" style="border-radius:10px;" data-setbg="/build/img/categoriasProduc/faraon.jpg">
+					<div class="categories__item set-bg zoom" style="border-radius:10px; background-size: cover;" data-setbg="/build/img/categoriasProduc/faraon.jpg">
 						<h5><a style="border-radius:10px">Faraon</a></h5>
 					</div>
 				</div>
 				<div class="col-lg-3" style="border-radius:10px;">
-					<div class="categories__item set-bg zoom" style="border-radius:10px;" data-setbg="/build/img/categoriasProduc/gatore.jpg">
+					<div class="categories__item set-bg zoom" style="border-radius:10px; background-size: cover;" data-setbg="/build/img/categoriasProduc/gatore.jpg">
 						<h5><a style="border-radius:10px">Gatore</a></h5>
 					</div>
 				</div>
@@ -126,7 +126,7 @@ include_once __DIR__ . '/../templates/header.php';
 											<a><i class="fa fa-heart"></i></a>
 										</li>
 										<li>
-											<div class="boton-modal " data-target="<?php echo $producto->nombre; ?>" data-img="/build/img/imgProducto/<?php echo $producto->imagen; ?>" data-categoria="<?php echo $categoria->nombre ?>" data-precio="<?php echo $producto->precio; ?>">
+											<div class="boton-modal " data-target="<?php echo $producto->nombre; ?>" data-img="/build/img/imgProducto/<?php echo $producto->imagen; ?>" data-categoria="<?php echo $categoria->nombre ?>" data-precio="<?php echo $producto->precio; ?>" data-id="<?php echo $producto->id; ?>">
 												<label for="btn-modal">
 													<a><i class="fa fa-retweet"></i></a>
 												</label>
@@ -155,7 +155,7 @@ include_once __DIR__ . '/../templates/header.php';
 
 
 
-<!--Ventana Modal-->
+<!--Ventana Modal
 <input type="checkbox" id="btn-modal">
 <div class="container-modal">
 	<div class="content-modal">
@@ -188,9 +188,72 @@ include_once __DIR__ . '/../templates/header.php';
 	</div>
 	<label for="btn-modal" class="cerrar-modal"></label>
 </div>
-<!--Fin de Ventana Modal-->
+Fin de Ventana Modal-->
 
+<!--Ventana Modal 2-->
+<input type="checkbox" id="btn-modal">
+<div class="container-modal">
+	<div class="content-modal">
+		<div class="container2">
+			<div class="card2">
+				<div class="shoeBackground">
+					<img id="modal_img_producto" src="" alt="Imagen Producto" class="shoe show" color="blue">
+				</div>
+				<div class="info">
+					<div class="shoeName">
+						<div>
+							<h1 id="modal_nombre_producto" class="big" style="font-weight: bold">Nike Zoom KD 12</h1>
+							<span class="new">new</span>
+						</div>
+						<h3 class="small">-</h3>
+					</div>
+					<div class="product__details__rating">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star-half-o"></i>
+					</div>
+					<div class="description">
+						<h3 id="modal_categoria_producto" class="title">Categoria</h3>
+						<!--<p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
+		-->
+						<br class="ocultar"><br class="ocultar">
+						<div class="price">							
+							<h1 id="modal_precio_producto_antes" style="font-size: 1rem; padding-bottom: 10px; color: #ef5050; text-decoration: line-through;">189.99</h1>
+						</div>
+						<div class="price">
+							<i class="fas fa-dollar-sign"></i>
+							<h1 id="modal_precio_producto">189.99</h1>
+						</div>
+					</div>
+					<div class="color-container">
+						
+						<h3 class="title"></h3>
+						<div class="colors">
+						</div>
+					</div>
+					<!--<div class="size-container">
+						<h3 class="title">size</h3>
+						<div class="sizes">
+							<span class="size">7</span>
+							<span class="size">8</span>
+							<span class="size active">9</span>
+							<span class="size">10</span>
+							<span class="size">11</span>
+						</div>
+					</div>-->
+					<div class="buy-price">
+						<a href="" id="addCard" class="buy"><i class="fa fa-shopping-cart"></i> Agregar al Carrito</a>
 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<label for="btn-modal" class="cerrar-modal"></label>
+</div>
+<!--Fin de Ventana Modal 2-->
 
 
 <!-- Banner Begin -->
@@ -198,8 +261,8 @@ include_once __DIR__ . '/../templates/header.php';
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6">
-				<div class="banner__pic">
-					<img class="zoom" src="/build/img/banner/costeno.png" alt="" style="border-radius: 10px">
+				<div class="banner__pic" style="padding-bottom: 10px;">
+					<img class="zoom" src="/build/img/banner/costeno.png" alt="" style="border-radius: 10px; ">
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6">
@@ -312,7 +375,7 @@ include_once __DIR__ . '/../templates/header.php';
 			</div>
 			<div class="col-lg-4 col-md-6">
 				<div class="latest-product__text">
-					<h4>Mayores Precios</h4>
+					<h4>Más recomendados</h4>
 					<div class="latest-product__slider owl-carousel">
 						<div class="latest-prdouct__slider__item">
 							<?php

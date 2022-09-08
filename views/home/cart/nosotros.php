@@ -1,9 +1,10 @@
 <?php
-include_once __DIR__ . '../../../templates/header.php';
+include_once __DIR__ . '../../../templates/header_secod.php';
 ?>
 <!-- Breadcrumb Section Begin -->
 <section class="">
     <div class="container">
+        <br><br><br><br>
         <div class="row">
             <div class="col-lg-12 col-md-12 text-center">
                 <div class="breadcrumb__text ">
@@ -30,29 +31,42 @@ include_once __DIR__ . '../../../templates/header.php';
 </section>
 <!-- Breadcrumb Section End -->
 
+</div>
+</header>
 
 <!-- Blog Details Section Begin -->
-<section class="blog-details spad" style="border-bottom:none">
+<section class="blog-details spad " style="border-bottom:none; padding-bottom: 0px;">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-12 order-md-1 order-1">
+            <div class="col-lg-12 col-md-12 order-md-1 order-1">
                 <div class="blog__details__text">
                     <!--<img src="img/blog/details/details-pic.jpg" alt="">-->
-                    <h3 class="text-center">¿Quiénes Somos?</h3>
-                    <p class="text-center">HIN Inversiones S.A.C Somos una empresa dedicada al rubro de ventas y distribución de abarrotes por venta mayor y menor. Iniciando sus operaciones en el año 2019, nos encontramos ubicados en el Distrito de San Luis, Augusto Duran 2493.</p>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-6 order-md-1 order-2">
+                    <div class="zoom" style=" background-color: #ffffff;
+                    z-index: 1;
+                    padding: 35px 40px;
+                    box-shadow: 15px 0 35px rgb(0 0 0 / 10%), 0 -15px 35px rgb(0 0 0 / 10%), 0 15px 35px rgb(0 0 0 / 10%);
+                    border-radius: 20px ;">
+                        <h3 class="text-center">¿Quiénes Somos?</h3>
+                        <p class="text-center">HIN Inversiones S.A.C Somos una empresa dedicada al rubro de ventas y distribución de abarrotes por venta mayor y menor. Iniciando sus operaciones en el año 2019, nos encontramos ubicados en el Distrito de San Luis, Augusto Duran 2493.</p>
+                    </div>
+                    <br><br><br>
+                    <div class="row zoom">
+                        <div class="col-lg-12 col-md-12 order-md-1 order-2">
                             <div class="">
-                                <div class="blog__sidebar__item">
+                                <div class="blog__sidebar__item" style=" background-color: #ffffff;
+                                z-index: 1;
+                                padding: 35px 40px;
+                                box-shadow: 15px 0 35px rgb(0 0 0 / 10%), 0 -15px 35px rgb(0 0 0 / 10%), 0 15px 35px rgb(0 0 0 / 10%);
+                                border-radius: 20px ;">
                                     <h4 class="text-center">Valores</h4>
                                     <div class="blog__sidebar__item__tags text-center">
-                                        <a>Confianza</a>
-                                        <a>Honestidad</a>
-                                        <a>Calidad</a>
-                                        <a>Eficiencia</a>
-                                        <a>Compromiso </a>
-                                        <a>Solidaridad</a>
-                                        <a>Amor</a>
+                                        <a style="border-radius: 10px;">Confianza</a>
+                                        <a style="border-radius: 10px;">Honestidad</a>
+                                        <a style="border-radius: 10px;">Calidad</a>
+                                        <a style="border-radius: 10px;">Eficiencia</a>
+                                        <a style="border-radius: 10px;">Compromiso </a>
+                                        <a style="border-radius: 10px;">Solidaridad</a>
+                                        <a style="border-radius: 10px;">Amor</a>
                                     </div>
                                 </div>
                             </div>
@@ -68,15 +82,18 @@ include_once __DIR__ . '../../../templates/header.php';
 </section>
 <!-- Blog Details Section End -->
 
-</div>
-</header>
+
 
 <!-- Blog Details Section Begin -->
-<section class="blog-details spad" style="border-bottom:none">
+<section class="blog-details spad" style="border-bottom:none; padding-top: 0px;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 order-md-1 order-1">
-                <div class="blog__details__text">
+                <div class="blog__details__text zoom" style=" background-color: #ffffff;
+                z-index: 1;
+                padding: 35px 40px;
+                box-shadow: 15px 0 35px rgb(0 0 0 / 10%), 0 -15px 35px rgb(0 0 0 / 10%), 0 15px 35px rgb(0 0 0 / 10%);
+                border-radius: 20px ;">
                     <!--<img src="img/blog/details/details-pic.jpg" alt="">-->
                     <div class="row">
                         <div class="col-lg-12 col-md-6 order-md-1 order-2">
